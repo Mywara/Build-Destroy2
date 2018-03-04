@@ -21,13 +21,14 @@ GameObject:
   - component: {fileID: 4711120064767644}
   - component: {fileID: 23422740735618928}
   - component: {fileID: 33760908183587956}
+  - component: {fileID: 64993542428589486}
   - component: {fileID: 114585657853498630}
   - component: {fileID: 114512538896514118}
   - component: {fileID: 114093464324816856}
   - component: {fileID: 54406194905188502}
   m_Layer: 0
   m_Name: Door
-  m_TagString: bloc
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -101,6 +102,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64993542428589486
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015485233289602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!114 &114093464324816856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,8 +203,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 11
-  instantiationId: 11
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114585657853498630

@@ -34,10 +34,10 @@ public class PartyManager : Photon.PunBehaviour {
     public Button drawButton;
     public Text winnerText;
     public Text phaseNameWin;
+    public GameObject playerZone;
 
-    private GameObject playerZone;
     private CameraController camController;
-    public int PlayerID = 1;
+    private int PlayerID = 1;
     private int nbMaxPlayer;
     private int nbPlayerReady;
     private float startPhaseTime;
@@ -306,6 +306,13 @@ public class PartyManager : Photon.PunBehaviour {
         }
     }
 
+    public bool TargettingPlayerZone()
+    {
+        Transform focusPoint = playerZone.transform.GetChild(1);
+
+        return (focusPoint.position.Equals(camController.targetToRotateAround.position));
+    }
+
     [PunRPC]
     private void StartingGame()
     {
@@ -356,7 +363,6 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Steal Phase");
         stealPhase = true;
-        drawButton.gameObject.SetActive(false);
     }
 
     [PunRPC]
@@ -389,6 +395,7 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseNameUpgrade("Upgrade Phase");
         upgradePhase = true;
+        drawButton.gameObject.SetActive(false);
     }
 
     [PunRPC]
