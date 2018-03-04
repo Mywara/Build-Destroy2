@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour {
     public float minDistance = 10;
     public float maxDistance = 50;
     public float startDistance = 20;
+
     private float rotY;
     private float rotX;
     private float moveUp;

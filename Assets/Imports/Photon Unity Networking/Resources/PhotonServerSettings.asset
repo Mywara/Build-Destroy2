@@ -51,6 +51,7 @@ MonoBehaviour:
   - UpdateTimer
   - UpdateTimerUpgrade
   - UpgradePhase
+<<<<<<< HEAD
   - StartTimer
   - ChangeToWinUI
   - WinPhase
@@ -59,4 +60,6 @@ MonoBehaviour:
   - GameIsOver
   - MoveDown
   - GameStarted
+=======
+>>>>>>> df2ff5edce04844acabf460a2033d184adffcddc
   DisableAutoOpenWizard: 1
