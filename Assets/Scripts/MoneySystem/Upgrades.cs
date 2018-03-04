@@ -10,12 +10,14 @@ public class Upgrades : MonoBehaviour {
     public Text costMoreStock;
     public Text costHiddenCard;
     private int cost_inc_inc;
-    private int cost_more_cards;     //Depends on number of cards in hands
-    private int cost_more_stocks;    //Depends on number of stock
-    private int cost_hidden_card;    //Depends on number of cards hidden and number of cards in hands
+    private int cost_more_cards;    
+    private int cost_more_stocks;    
+    private int cost_hidden_card;    
     private int cost_draw_card;
     private int nbUpgrades = 1;
     private int nbCards;
+    private int drawnCards = 0;
+    public int handsize;
     public Text plusIncome;
     public PartyManager manageUI;
 
@@ -28,6 +30,7 @@ public class Upgrades : MonoBehaviour {
         plusIncome.enabled = false;
         cost_draw_card = 1500;
         nbCards = CardManager.instance.handSize;
+        handsize = CardManager.instance.handSize;
     }
 
     public void showIncome()
@@ -43,10 +46,10 @@ public class Upgrades : MonoBehaviour {
     public void updateCost()
     {
         cost_inc_inc = (int)MoneySystem.instance.actualIncome * 2 / 3 * nbUpgrades;
-        cost_hidden_card = (int)MoneySystem.instance.actualIncome * 2 / 3;
-        cost_more_cards = (int)MoneySystem.instance.actualIncome * 2 / 3;
-        cost_more_stocks = (int)MoneySystem.instance.actualIncome * 2 / 3;
-        cost_draw_card = 1500;
+        cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3;
+        cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3;
+        cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3;
+        cost_draw_card = 1500 + drawnCards * 2 * 1500;
     }
 
     public void updateCostText()
@@ -76,6 +79,7 @@ public class Upgrades : MonoBehaviour {
         if (MoneySystem.instance.BuyItem(cost_more_cards))
         {
             CardManager.instance.HandExtension();
+            handsize++;
             updateCost();
         }
     }
@@ -84,6 +88,7 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_more_stocks))
         {
+            CardManager.instance.stockSize++;
             updateCost();
         }
     }
@@ -98,13 +103,15 @@ public class Upgrades : MonoBehaviour {
 
     public void drawACard()
     {
-        if (nbCards < CardManager.instance.handSize)
+        nbCards = CardManager.instance.countCards();
+        if (nbCards < handsize)
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
             {
                 manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
                 nbCards++;
+                drawnCards++;
             }
         }
     }
