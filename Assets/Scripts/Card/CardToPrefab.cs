@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardToPrefab : MonoBehaviour {
+public class CardToPrefab : MonoBehaviour
+{
 
     public GameObject detroyObject;
     public GameObject prefab;
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+        prefab = this.gameObject.GetComponent<CardDisplay>().blockPrefab;
+    }
 
     public void DestroyAndCreate()
     {
