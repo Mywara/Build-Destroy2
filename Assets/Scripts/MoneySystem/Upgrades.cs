@@ -112,6 +112,7 @@ public class Upgrades : MonoBehaviour {
                 CardManager.instance.AddCard();
                 nbCards++;
                 drawnCards++;
+                updateCost();
             }
         }
     }
