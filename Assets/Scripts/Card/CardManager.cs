@@ -77,6 +77,7 @@ public class CardManager : MonoBehaviour
         // Counts the amount of cards in the stock
         foreach(var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Stock_Cards"))
         {
+            cardInStock.Add(obj);
             stockCount++;
         }
 
