@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMouvement : MonoBehaviour {
+public class ObjectMouvement : MonoBehaviour
+{
 
     // Use this for initialization
     private GameObject cube;
@@ -10,15 +11,17 @@ public class ObjectMouvement : MonoBehaviour {
     bool dropEnabled = true;
     int collision = 0;
 
-    void Start () {
-		cube = this.gameObject;
-	}
+    void Start()
+    {
+        cube = this.gameObject;
+    }
 
     void Update()
     {
         Vector3 pos = Input.mousePosition;
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
+
 
         if (Input.GetMouseButton(0))
         {
@@ -32,20 +35,20 @@ public class ObjectMouvement : MonoBehaviour {
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
-        if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
-        {
-            if (dropEnabled)
+        if (Input.GetKeyDown(KeyCode.Space))
+            if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
             {
-                cube.AddComponent<BoxCollider>();
-                cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Destroy(this);
+                if (dropEnabled)
+                {
+                    cube.AddComponent<BoxCollider>();
+                    cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Destroy(this);
+                }
+                else
+                {
+                    //TODO: give some feedback showing the player the access to this area is not allowed
+                }
             }
-            else
-            {
-                //TODO: give some feedback showing the player the access to this area is not allowed
-                Debug.Log("You are not allowed to drop your block in this area right now");
-            }
-        }
     }
 
     public void DisableDrop()
@@ -69,9 +72,10 @@ public class ObjectMouvement : MonoBehaviour {
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.tag == "bloc") { 
-        collision--;
-        Debug.Log("col " + collision);
+        if (other.tag == "bloc")
+        {
+            collision--;
+            Debug.Log("col " + collision);
         }
     }
 }
