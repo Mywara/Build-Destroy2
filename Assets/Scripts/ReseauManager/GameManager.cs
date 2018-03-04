@@ -33,5 +33,10 @@ public class GameManager : Photon.PunBehaviour
     {
         PhotonNetwork.LoadLevel("ChooseRoom");
     }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.LoadLevel("ChooseRoom");
+    }
 }
 

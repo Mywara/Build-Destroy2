@@ -51,4 +51,10 @@ MonoBehaviour:
   - UpdateTimer
   - UpdateTimerUpgrade
   - UpgradePhase
+  - StartTimer
+  - ChangeToWinUI
+  - WinPhase
+  - LeaveRoom
+  - UpdateTimerWin
+  - GameIsOver
   DisableAutoOpenWizard: 1
