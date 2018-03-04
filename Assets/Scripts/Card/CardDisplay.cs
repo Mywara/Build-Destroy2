@@ -34,8 +34,8 @@ public class CardDisplay : MonoBehaviour
         //mettre la souris en enfant
         //Destroy(cardPrefab);
          
-        mousePos = Input.mousePosition;
+        /*mousePos = Input.mousePosition;
         GameObject item = Instantiate(blockPrefab, Vector3.zero, Quaternion.identity);
-        item.transform.position = mousePos;
+        item.transform.position = mousePos;*/
     }
 }

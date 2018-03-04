@@ -6,7 +6,7 @@ public class ObjectMouvement : MonoBehaviour {
 
     // Use this for initialization
     private GameObject cube;
-    float z;
+    float z = 0;
 
     void Start () {
 		cube = this.gameObject;
@@ -16,8 +16,9 @@ public class ObjectMouvement : MonoBehaviour {
     {
 
         Vector3 pos = Input.mousePosition;
-        pos.z = transform.position.z - Camera.main.transform.position.z;
+        pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
+
 
         if (Input.GetMouseButton(0))
         {
@@ -32,6 +33,8 @@ public class ObjectMouvement : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            cube.AddComponent<BoxCollider>();
+            cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Destroy(this);
         }
     }
