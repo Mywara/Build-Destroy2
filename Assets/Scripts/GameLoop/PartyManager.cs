@@ -384,6 +384,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DestructionPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         buildPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Destruction Phase");
@@ -393,6 +394,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void UpgradePhase()
     {
+        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         destructionPhase = false;
         if (PhotonNetwork.connected)
         {
