@@ -35,7 +35,9 @@ public class ObjectMouvement : Photon.PunBehaviour {
             z = z - (float)00000.1;
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
-        if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        //if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
             if (dropEnabled)
             {
