@@ -192,14 +192,14 @@ public class CardManager : MonoBehaviour
         //costblock = Convert.ToInt32(this.GetComponent<CardDisplay>().costText.text);
         if (stockCount < stockSize)
         {
-            if (MoneySystem.instance.BuyItem(costblock))
-            {
+            //if (MoneySystem.instance.BuyItem(costblock))
+            //{
                 clickedCard.transform.SetParent(stock.transform, false);
                 clickedCard.transform.localScale = new Vector3(1, 1, 1);
                 clickedCard.transform.localPosition = Vector3.zero;
                 clickedCard.tag = "Stock_Cards";
                 stockCount++;
-            }
+            //}
         }
     }
 }
