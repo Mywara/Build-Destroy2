@@ -10,16 +10,10 @@ public class CardToPrefab : Photon.PunBehaviour
     public Upgrades drawCards;
 
     // Use this for initialization
-<<<<<<< HEAD
     void Start()
     {
         //prefab = this.gameObject.GetComponent<CardDisplay>().blockPrefab;
     }
-=======
-    void Start () {
-		
-	}
->>>>>>> master
 
     public void DestroyAndCreate()
     {
