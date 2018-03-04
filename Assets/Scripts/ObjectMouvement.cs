@@ -38,6 +38,15 @@ public class ObjectMouvement : Photon.PunBehaviour {
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Alpha1))
+        {
+            cube.transform.Rotate(Vector3.up * 100 * Time.deltaTime);
+        }
+        if(Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Alpha2))
+        {
+            cube.transform.Rotate(-Vector3.forward * 100 * Time.deltaTime);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         //if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
