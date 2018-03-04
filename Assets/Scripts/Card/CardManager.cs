@@ -82,7 +82,6 @@ public class CardManager : MonoBehaviour
         }
 
         // If we ever have too many card in the stock, remove the extras
-        Debug.Log("Stock Size is : " + stockSize + " Stock Count is : " + stockCount);
         if(stockCount > stockSize)
         {
             while(stockCount > stockSize)

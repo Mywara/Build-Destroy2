@@ -9,7 +9,7 @@ public class CardToPrefab : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        prefab = this.gameObject.GetComponent<CardDisplay>().blockPrefab;
+        //prefab = this.gameObject.GetComponent<CardDisplay>().blockPrefab;
     }
 
     public void DestroyAndCreate()
