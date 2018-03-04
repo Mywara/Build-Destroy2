@@ -38,7 +38,7 @@ public class CardToPrefab : Photon.PunBehaviour
             if (MoneySystem.instance.BuyItem(costblock))
             {
                 MoneyText.text = "Money : " + MoneySystem.instance.money + "$";
-                IncomeText.text = IncomeText.text+ "\n -" + costblock + "$";
+                //IncomeText.text = IncomeText.text+ "\n -" + costblock + "$";
 
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
