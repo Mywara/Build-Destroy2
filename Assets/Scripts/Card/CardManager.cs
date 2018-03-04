@@ -48,14 +48,12 @@ public class CardManager : MonoBehaviour
     // Variables declarations
     public List<Card> cardList; // List of possible cards
     public List<GameObject> cardInHand; // List of the UI objects in the player's hand
+    public List<GameObject> cardInStock; // List of the UI objects in the player's stock
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
     public int handSize = 5;
-<<<<<<< HEAD
-=======
     public int stockSize = 1;
     public int stockCount = 0;
->>>>>>> Maxime-Branch
 
 
     /// <summary>
@@ -73,8 +71,6 @@ public class CardManager : MonoBehaviour
             cardInHand.Add(obj);
         }
 
-<<<<<<< HEAD
-=======
         // Counts the amount of cards in the stock
         foreach(var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Stock_Cards"))
         {
@@ -93,7 +89,6 @@ public class CardManager : MonoBehaviour
             }
         }
 
->>>>>>> Maxime-Branch
         if (cardInHand.Count < hand)
         {
             while (cardInHand.Count < hand)
@@ -170,8 +165,6 @@ public class CardManager : MonoBehaviour
     {
         this.handSize++;
     }
-<<<<<<< HEAD
-=======
 
     public bool CheckStock()
     {
@@ -185,8 +178,6 @@ public class CardManager : MonoBehaviour
         {
             cardInHand.Add(obj);
         }
-        Debug.Log("Comptage de carte");
         return cardInHand.Count;
     }
->>>>>>> Maxime-Branch
 }

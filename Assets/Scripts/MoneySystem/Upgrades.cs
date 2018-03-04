@@ -21,14 +21,9 @@ public class Upgrades : MonoBehaviour {
     private int cost_draw_card;
     private int nbUpgrades = 1;
     private int nbCards;
-<<<<<<< HEAD
-    public Text plusIncome;
-    public PartyManager manageUI;
-=======
     private int nbCardsHidden = 1;
     private int nbCardsDrawn = 0;
     
->>>>>>> Maxime-Branch
 
 
     public void Awake()
@@ -38,11 +33,8 @@ public class Upgrades : MonoBehaviour {
         plusIncome.text = "+ " + MoneySystem.instance.actualIncome;
         plusIncome.enabled = false;
         cost_draw_card = 1500;
-<<<<<<< HEAD
         nbCards = CardManager.instance.handSize;
-=======
         handsize = CardManager.instance.handSize;
->>>>>>> Maxime-Branch
     }
 
     public void showIncome()
@@ -58,18 +50,15 @@ public class Upgrades : MonoBehaviour {
     public void updateCost()
     {
         cost_inc_inc = (int)MoneySystem.instance.actualIncome * 2 / 3 * nbUpgrades;
-<<<<<<< HEAD
         cost_hidden_card = (int)MoneySystem.instance.actualIncome * 2 / 3;
         cost_more_cards = (int)MoneySystem.instance.actualIncome * 2 / 3;
         cost_more_stocks = (int)MoneySystem.instance.actualIncome * 2 / 3;
         cost_draw_card = 1500;
-=======
         cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000 + nbCardsHidden * 2000;
         cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000;
         cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.stockSize * 1000;
         cost_draw_card = 1500 + (nbCardsDrawn * 2 * 1500);
         handsize = CardManager.instance.handSize;
->>>>>>> Maxime-Branch
     }
 
     public void updateCostText()
