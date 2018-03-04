@@ -149,14 +149,4 @@ public class Upgrades : MonoBehaviour {
             }
         }
     }
-
-    public void putCardInStock()
-    {
-        nbCards--;
-    }
-
-    public void setCards()
-    {
-
-    }
 }
