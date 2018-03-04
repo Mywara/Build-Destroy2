@@ -358,7 +358,8 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DrawPhase()
     {
-        //this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
+        moneyUpgrade.text = "";
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
@@ -369,7 +370,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void StealPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         drawPhase = false;
         upgcost.eraseIncome();
         startPhaseTime = Time.time;
@@ -380,7 +381,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void BuildPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         stealPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Build Phase");
@@ -390,7 +391,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DestructionPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         buildPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Destruction Phase");
@@ -400,7 +401,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void UpgradePhase()
     {
-        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         destructionPhase = false;
         if (PhotonNetwork.connected)
         {
@@ -419,7 +420,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void WinPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
+        this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         if (PhotonNetwork.connected)
         {
             photonView.RPC("ChangeToWinUI", PhotonTargets.AllViaServer);
@@ -615,6 +616,7 @@ public class PartyManager : Photon.PunBehaviour {
             basicUI.enabled = false;
             upgradeUI.enabled = true;
             moneyUpgrade.text = "Budget " + MoneySystem.instance.money ;
+            notifUpgrade.text = "";
             winUI.enabled = false;
             UpdateMoneyUpgrade();
             upgcost.updateCostText();

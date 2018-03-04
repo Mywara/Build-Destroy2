@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class changePlayer : MonoBehaviour
 {
 
-    public Text tbPlayerName;
+   /* public Text tbPlayerName;
     private List<string> playerNameList;
     string currentPlayerName;
     int listIndex = 0;
@@ -86,5 +86,5 @@ public class changePlayer : MonoBehaviour
             currentPlayerName = playerNameList[listIndex];
             tbPlayerName.text = currentPlayerName;
         }
-    }
+    }*/
 }
