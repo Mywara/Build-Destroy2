@@ -11,55 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3758f8f58fdef43803eb9be1df0608, type: 3}
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
-  AppID: 189b5a86-06a5-4f7e-9fa2-4392bf6e38d9
+  AppID: 
   VoiceAppID: 
   ChatAppID: 
-  HostType: 1
-  PreferredRegion: 8
+  HostType: 0
+  PreferredRegion: 0
   EnabledRegions: -1
   Protocol: 0
   ServerAddress: 
   ServerPort: 5055
   VoiceServerPort: 5055
-  JoinLobby: 1
+  JoinLobby: 0
   EnableLobbyStatistics: 0
   PunLogging: 0
   NetworkLogging: 1
   RunInBackground: 1
-  RpcList:
-  - AddMoney
-  - AddPlayerName
-  - BuildPhase
-  - ChangeToBasicUI
-  - ChangeToUpgradeUI
-  - Chat
-  - DestroyRpc
-  - DestructionPhase
-  - DrawPhase
-  - InstantiateRpc
-  - NewPlayerRdy
-  - PickupItemInit
-  - PunPickup
-  - PunPickupSimple
-  - PunRespawn
-  - RequestForPickupItems
-  - RequestForPickupTimes
-  - ResetPhase
-  - StartingGame
-  - StealPhase
-  - Turn
-  - UpdateTimer
-  - UpdateTimerUpgrade
-  - UpgradePhase
-<<<<<<< HEAD
-  - StartTimer
-  - ChangeToWinUI
-  - WinPhase
-  - LeaveRoom
-  - UpdateTimerWin
-  - GameIsOver
-  - MoveDown
-  - GameStarted
-=======
->>>>>>> df2ff5edce04844acabf460a2033d184adffcddc
-  DisableAutoOpenWizard: 1
+  RpcList: []
+  DisableAutoOpenWizard: 0
