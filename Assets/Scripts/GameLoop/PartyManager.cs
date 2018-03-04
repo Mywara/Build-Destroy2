@@ -34,10 +34,10 @@ public class PartyManager : Photon.PunBehaviour {
     public Button drawButton;
     public Text winnerText;
     public Text phaseNameWin;
+    public GameObject playerZone;
 
-    private GameObject playerZone;
     private CameraController camController;
-    public int PlayerID = 1;
+    private int PlayerID = 1;
     private int nbMaxPlayer;
     private int nbPlayerReady;
     private float startPhaseTime;
