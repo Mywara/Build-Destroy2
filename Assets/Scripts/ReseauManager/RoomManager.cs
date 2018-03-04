@@ -34,8 +34,17 @@ public class RoomManager : Photon.PunBehaviour {
         string name = roomNameText.text;
         RoomOptions ro = new RoomOptions();
 
-        int i;
+        int i = 0;
+        string player_nbr = numberText.text;
         System.Int32.TryParse(numberText.text, out i);
+        if (i == 0 || !char.IsDigit(player_nbr, 0))
+        {
+            i = 1;
+        }
+        else if (i > 20)
+        {
+            i = 20;
+        }
         ro.MaxPlayers = (byte)i;
         PhotonNetwork.JoinOrCreateRoom(name, ro, TypedLobby.Default);
     }

@@ -11,6 +11,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
 
     // TEST
     public bool dropEnabled = false;
+    public bool notCollision = true;
 
     void Start () {
 		cube = this.gameObject;
@@ -22,6 +23,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         {
             return;
         }
+        //Debug.Log(dropEnabled);
         Vector3 pos = Input.mousePosition;
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
@@ -38,12 +40,22 @@ public class ObjectMouvement : Photon.PunBehaviour {
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Alpha1))
+        {
+            cube.transform.Rotate(Vector3.up * 100 * Time.deltaTime);
+        }
+        if(Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Alpha2))
+        {
+            cube.transform.Rotate(-Vector3.forward * 100 * Time.deltaTime);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         //if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            if (dropEnabled)
+            if (dropEnabled && notCollision)
             {
                 //cube.GetComponent<BoxCollider>().isTrigger = false;
+                
 
                 cubes = cube.transform.GetComponentsInChildren<Transform>();
                 Debug.Log("lenght" + cubes.Length);
@@ -62,7 +74,8 @@ public class ObjectMouvement : Photon.PunBehaviour {
                 }
 
                 cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Destroy(this);
+                
+                photonView.RPC("RbToNotKinematicAndDestory", PhotonTargets.AllViaServer);
             }
             else
             {
@@ -81,22 +94,31 @@ public class ObjectMouvement : Photon.PunBehaviour {
         dropEnabled = true;
     }
 
-    /*
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "bloc")
+        
+        GameObject otherGO = other.transform.root.gameObject;
+        if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
         {
-            collision++;
-            Debug.Log("col " + collision);
-        }
+            //Debug.Log("trigger enter with " + otherGO.name);
+            notCollision = false;
+        }   
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.tag == "bloc") { 
-        collision--;
-        Debug.Log("col " + collision);
-        }
+        GameObject otherGO = other.transform.root.gameObject;
+        if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
+        {
+            //Debug.Log("trigger exit with " + otherGO.name);
+            notCollision = true;
+        } 
     }
-*/
+
+    [PunRPC]
+    private void RbToNotKinematicAndDestory()
+    {
+        cube.GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(this);
+    }
 }
