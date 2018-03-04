@@ -24,6 +24,7 @@ public class Upgrades : MonoBehaviour {
     public Text Money;
     public Text notifUpgrade;
     public Text MoneytextUpgrade;
+    public Text drawCost;
 
 
     public void Awake()
@@ -35,6 +36,7 @@ public class Upgrades : MonoBehaviour {
         cost_draw_card = 1500;
         nbCards = CardManager.instance.handSize;
         handsize = CardManager.instance.handSize;
+        drawCost.text = "Cost : " + cost_draw_card;
     }
 
     public void showIncome()
@@ -45,6 +47,16 @@ public class Upgrades : MonoBehaviour {
     public void eraseIncome()
     {
         plusIncome.enabled = false; 
+    }
+
+    public void showDrawCost()
+    {
+        drawCost.enabled = true;
+    }
+
+    public void eraseDrawCost()
+    {
+        drawCost.enabled = false;
     }
 
     public void updateCost()
@@ -133,6 +145,7 @@ public class Upgrades : MonoBehaviour {
                 nbCards++;
                 drawnCards++;
                 updateCost();
+                drawCost.text = "Cost : " + cost_draw_card;
             }
         }
     }

@@ -365,6 +365,7 @@ public class PartyManager : Photon.PunBehaviour {
         drawPhase = true;
         CardManager.instance.DrawHand(CardManager.instance.handSize);
         drawButton.gameObject.SetActive(true);
+        upgcost.showDrawCost();
     }
 
     [PunRPC]
@@ -403,6 +404,7 @@ public class PartyManager : Photon.PunBehaviour {
     {
         this.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>().text = "";
         destructionPhase = false;
+        upgcost.eraseDrawCost();
         if (PhotonNetwork.connected)
         {
             photonView.RPC("ChangeToUpgradeUI", PhotonTargets.AllViaServer);
