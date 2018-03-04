@@ -307,13 +307,8 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
-<<<<<<< HEAD
         CardManager.instance.DrawHand(CardManager.instance.handSize);
         drawButton.gameObject.SetActive(true);
-=======
-        CardManager.instance.DrawHand(CardManager.instance.handSize, CardManager.instance.stockSize);
-        drawButton.enabled = true;
->>>>>>> DarkXolotl
     }
 
     [PunRPC]
