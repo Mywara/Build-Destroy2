@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class CardToPrefab : MonoBehaviour
+public class CardToPrefab : Photon.PunBehaviour
+//public class CardToPrefab : MonoBehaviour
 {
 
     public GameObject detroyObject;
@@ -16,8 +17,8 @@ public class CardToPrefab : MonoBehaviour
     {
         // If we play the card from the stock, reduce the count
         if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
+        prefab = this.GetComponent<CardDisplay>().blockPrefab;
         Destroy(this.gameObject);
-        Quaternion q = new Quaternion();
-        Instantiate(prefab, Vector3.zero, q);
+        PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
     }
 }

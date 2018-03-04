@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 65232360}
   - component: {fileID: 65232359}
   - component: {fileID: 65232358}
+  - component: {fileID: 65232363}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -143,8 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f038692e367fd44a4e1d774f6c9cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detroyObject: {fileID: 485656608}
-  prefab: {fileID: 1424008434287136, guid: f6c94898c00176040937523b40601829, type: 2}
 --- !u!114 &65232359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +220,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &65232363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 65232357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d225ea3e5afa234f9ad25adc1f988a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detroyObject: {fileID: 0}
+  prefab: {fileID: 1017521981602020, guid: 055f59100bc98784fbf1a5a7915ad2a9, type: 2}
 --- !u!1 &485656608
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +311,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 485656608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -517,8 +529,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65232358}
-        m_MethodName: TesttoDestroy
+      - m_Target: {fileID: 65232363}
+        m_MethodName: DestroyAndCreate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

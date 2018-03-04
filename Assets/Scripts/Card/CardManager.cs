@@ -64,6 +64,7 @@ public class CardManager : MonoBehaviour
     /// <param name="stock">Should be the stockSize variable</param>
     public void DrawHand(int hand, int stock)
     {
+        // Reset the cardInHand list
         // Reset various variables
         cardInHand.Clear();
         stockCount = 0;
