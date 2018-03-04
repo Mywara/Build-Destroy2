@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class CardToPrefab : Photon.PunBehaviour
 {
@@ -9,7 +8,6 @@ public class CardToPrefab : Photon.PunBehaviour
     public GameObject prefab;
 
     private PartyManager partyManager;
-    private int costblock;
 
     // Use this for initialization
     void Start () {
@@ -24,21 +22,12 @@ public class CardToPrefab : Photon.PunBehaviour
     {
         PhaseType phaseType = partyManager.GetCurrentPhase();
 
-        costblock = Convert.ToInt32(this.GetComponent<CardDisplay>().costText); 
-        
         if (phaseType == PhaseType.Build && partyManager.TargettingPlayerZone()
             || phaseType == PhaseType.Destruct && !partyManager.TargettingPlayerZone())
         {
-            if (MoneySystem.instance.BuyItem(costblock))
-            {
-                prefab = this.GetComponent<CardDisplay>().blockPrefab;
-                Destroy(this.gameObject);
-                PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
-            }
-            else
-            {
-                Debug.Log("You don't have enough money");
-            }
+            prefab = this.GetComponent<CardDisplay>().blockPrefab;
+            Destroy(this.gameObject);
+            PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
         }
         else
         {

@@ -74,7 +74,6 @@ public class MoneySystem : MonoBehaviour {
     //Checks if you have enough money to buy item with cost, if you do buy it and return true. Otherwise, return false.
     public bool BuyItem(int cost)
     {
-        Debug.Log("You tried to buy something");
         if (instance.money >= cost)
         {
             instance.money -= cost;

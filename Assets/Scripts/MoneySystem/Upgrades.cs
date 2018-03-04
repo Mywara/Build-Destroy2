@@ -15,9 +15,9 @@ public class Upgrades : MonoBehaviour {
 
 
     private int cost_inc_inc;
-    private int cost_more_cards; 
-    private int cost_more_stocks;  
-    private int cost_hidden_card;   
+    private int cost_more_cards;     //Depends on number of cards in hands
+    private int cost_more_stocks;    //Depends on number of stock
+    private int cost_hidden_card;    //Depends on number of cards hidden and number of cards in hands
     private int cost_draw_card;
     private int nbUpgrades = 1;
     private int nbCards;
