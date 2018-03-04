@@ -30,7 +30,6 @@ public class PlayerZoneManager : Photon.PunBehaviour {
                || (phaseType == PhaseType.Destruct && playerZoneFocus.position.Equals(consideredFocus.position)))
             {
                 blockHandler.DisableDrop();
-                return;
             }
         }
     }
