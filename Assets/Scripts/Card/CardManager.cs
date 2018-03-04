@@ -64,8 +64,11 @@ public class CardManager : MonoBehaviour
     /// <param name="stock">Should be the stockSize variable</param>
     public void DrawHand(int hand, int stock)
     {
+<<<<<<< HEAD
         // Reset the cardInHand list
+=======
         // Reset various variables
+>>>>>>> DarkXolotl
         cardInHand.Clear();
         stockCount = 0;
 
@@ -75,6 +78,8 @@ public class CardManager : MonoBehaviour
             cardInHand.Add(obj);
         }
 
+<<<<<<< HEAD
+=======
         // Counts the amount of cards in the stock
         foreach(var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Stock_Cards"))
         {
@@ -93,6 +98,7 @@ public class CardManager : MonoBehaviour
             }
         }
 
+>>>>>>> DarkXolotl
         if (cardInHand.Count < hand)
         {
             while (cardInHand.Count < hand)
