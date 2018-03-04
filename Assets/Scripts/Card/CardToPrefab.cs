@@ -35,7 +35,7 @@ public class CardToPrefab : Photon.PunBehaviour
         {
             if (MoneySystem.instance.BuyItem(costblock))
             {
-                MoneyText.text = "" + MoneySystem.instance.money;
+                MoneyText.text = "Money : " + MoneySystem.instance.money + "$";
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
                 PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
@@ -50,12 +50,12 @@ public class CardToPrefab : Photon.PunBehaviour
             //TODO: give the player some feedback
             Debug.Log("You are not allowed to instantiate blocks in this area!");
         }
-        /*
+        
         // If we play the card from the stock, reduce the count
-        if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
+        /*if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
         prefab = this.GetComponent<CardDisplay>().blockPrefab;
         Destroy(this.gameObject);
-        PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
-        */
+        PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);*/
+        
     }
 }
