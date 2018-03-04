@@ -10,7 +10,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
     private Transform[] cubes;
 
     // TEST
-    public bool dropEnabled = true;
+    public bool dropEnabled = false;
 
     void Start () {
 		cube = this.gameObject;
