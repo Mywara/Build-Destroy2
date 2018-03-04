@@ -283,6 +283,21 @@ Prefab:
       propertyPath: instantiationId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114681028674274994, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681028674274994, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114681028674274994, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9a33e84d84e9544bc388c5aef0fc0f, type: 2}
   m_IsPrefabParent: 0
@@ -439,6 +454,26 @@ Prefab:
         type: 2}
       propertyPath: instantiationId
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615942386946856, guid: 9186266527337bb4e8fb51540ac83d35,
+        type: 2}
+      propertyPath: intialHeightToWin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615942386946856, guid: 9186266527337bb4e8fb51540ac83d35,
+        type: 2}
+      propertyPath: heightSpeedDown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615942386946856, guid: 9186266527337bb4e8fb51540ac83d35,
+        type: 2}
+      propertyPath: timeBeforeHeightGoesDown
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114615942386946856, guid: 9186266527337bb4e8fb51540ac83d35,
+        type: 2}
+      propertyPath: timeToMinHeight
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9186266527337bb4e8fb51540ac83d35, type: 2}

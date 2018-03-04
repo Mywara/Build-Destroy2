@@ -148,6 +148,7 @@ public class PartyManager : Photon.PunBehaviour {
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
                     photonView.RPC("Turn", PhotonTargets.AllViaServer);
+                    HeightWinningCondition.instance.photonView.RPC("GameStarted", PhotonTargets.AllViaServer);
                 }
                 else
                 {

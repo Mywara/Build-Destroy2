@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class HeightWinningCondition : Photon.PunBehaviour {
 
     public float intialHeightToWin = 20f;
+    public float minHeightToWin = 10f;
     public float timeBeforeHeightGoesDown = 10f;
-    public float heightSpeedDown = 1f;
+    public float timeToMinHeight = 10f;
     public float timeToHoldToWin = 5f;
     public Text timerText;
 
@@ -16,9 +17,23 @@ public class HeightWinningCondition : Photon.PunBehaviour {
     private bool timerStarted = false;
     private bool objectInTrigger = true;
     private bool thereIsAWinner = false;
+    private float gameStartedTime;
+    private bool gameStarted = false;
+    private bool lerpStarted = false;
+    private float time;
+
+    static public HeightWinningCondition instance;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Debug.Log("There already is an ArenaManager");
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+
         actualHeightToWin = intialHeightToWin;
         Vector3 newPos = new Vector3(0, actualHeightToWin, 0);
         transform.position = newPos;
@@ -87,6 +102,18 @@ public class HeightWinningCondition : Photon.PunBehaviour {
             timerStarted = false;
             ResetTimer();
         }
+        if(PhotonNetwork.isMasterClient && gameStarted)
+        {
+            if(Time.time > gameStartedTime + timeBeforeHeightGoesDown)
+            {
+                if(!lerpStarted)
+                {
+                    lerpStarted = true;
+                    time = 0;
+                }
+                photonView.RPC("MoveDown", PhotonTargets.AllViaServer);
+            }
+        }
     }
 
     private void UpdateTimer(float countDown)
@@ -102,5 +129,20 @@ public class HeightWinningCondition : Photon.PunBehaviour {
     private void ResetTimer()
     {
         timerText.text = "";
+    }
+
+    [PunRPC]
+    public void GameStarted()
+    {
+        //Debug.Log("gameStarted");
+        gameStartedTime = Time.time;
+        gameStarted = true;
+    }
+
+    [PunRPC]
+    private void MoveDown()
+    {
+        time += Time.deltaTime / timeToMinHeight;
+        transform.position = Vector3.Lerp(new Vector3(0, intialHeightToWin, 0), new Vector3(0, minHeightToWin, 0), time);
     }
 }
