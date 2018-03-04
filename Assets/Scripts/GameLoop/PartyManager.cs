@@ -289,11 +289,6 @@ public class PartyManager : Photon.PunBehaviour {
                 }
             }
         }
-    }
-
-    public bool TargettingPlayerZone()
-    {
-        Transform focusPoint = playerZone.transform.GetChild(1);
         else if (winPhase)
         {
             if (PhotonNetwork.connected)
@@ -304,13 +299,17 @@ public class PartyManager : Photon.PunBehaviour {
             {
                 UpdateTimerWin(startPhaseTime + winPhaseTime - Time.time);
             }
-
-        return (focusPoint.position.Equals(camController.targetToRotateAround.position));
             if (Time.time > startPhaseTime + winPhaseTime)
             {
                 photonView.RPC("LeaveRoom", PhotonTargets.AllViaServer);
             }
         }
+    }
+
+    public bool TargettingPlayerZone()
+    {
+        Transform focusPoint = playerZone.transform.GetChild(1);
+        return (focusPoint.position.Equals(camController.targetToRotateAround.position));
     }
 
     [PunRPC]
