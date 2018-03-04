@@ -131,8 +131,8 @@ public class Upgrades : MonoBehaviour {
 
     public void drawACard()
     {
+
         nbCards = CardManager.instance.countCards();
-        Debug.Log(nbCards);
         if (nbCards < handsize)
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
@@ -148,5 +148,15 @@ public class Upgrades : MonoBehaviour {
                 drawCost.text = "Cost : " + cost_draw_card;
             }
         }
+    }
+
+    public void putCardInStock()
+    {
+        nbCards--;
+    }
+
+    public void setCards()
+    {
+
     }
 }

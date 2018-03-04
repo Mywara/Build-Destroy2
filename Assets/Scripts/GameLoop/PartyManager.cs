@@ -164,7 +164,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
 		if(drawPhase)
         {
-            additionalCardsCost.enabled = true;
+            //additionalCardsCost.enabled = true;
             if(PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + drawPhaseTime - Time.time);
@@ -220,7 +220,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (buildPhase)
         {
-            additionalCardsCost.enabled = false;
+            //additionalCardsCost.enabled = false;
             stealUI.SetActive(false);
             if (PhotonNetwork.connected)
             {
@@ -336,7 +336,7 @@ public class PartyManager : Photon.PunBehaviour {
         waitingToStart = false;
         upgradePhase = false;
         Debug.Log("Turn Started");
-        if(PhotonNetwork.connected)
+        if (PhotonNetwork.connected)
         {
             photonView.RPC("ChangeToBasicUI", PhotonTargets.AllViaServer);
             if(PhotonNetwork.isMasterClient)

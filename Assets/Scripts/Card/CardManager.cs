@@ -56,6 +56,7 @@ public class CardManager : MonoBehaviour
     public GridLayoutGroup stock; //The grilayoutGroup of stock
     private int costblock;
     public Text MoneyText;
+    public Upgrades upgCards;
 
     public int handSize = 5;
     public int stockSize = 1;
@@ -198,10 +199,12 @@ public class CardManager : MonoBehaviour
                 clickedCard.transform.SetParent(stock.transform, false);
                 clickedCard.transform.localScale = new Vector3(1, 1, 1);
                 clickedCard.transform.localPosition = Vector3.zero;
-                clickedCard.tag = "Stock_Cards";
+                clickedCard.transform.parent.tag = "Stock_Cards";
                 stockCount++;
                 MoneyText.text = "Money : " + MoneySystem.instance.money + "$";
             }
         }
     }
+
+   
 }

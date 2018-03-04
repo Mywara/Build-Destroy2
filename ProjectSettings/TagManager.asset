@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - bloc
+  - Undefined
+  - Cards
+  - Stock_Cards
   layers:
   - Default
   - TransparentFX
