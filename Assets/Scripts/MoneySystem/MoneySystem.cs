@@ -65,7 +65,7 @@ public class MoneySystem : MonoBehaviour {
 
 
 
-    //Save money in PlayerPrefs.
+    //while reality exists, save money every saveInterval.
     public void SaveMoney()
     {
             PlayerPrefs.SetInt("MoneySave", instance.money);

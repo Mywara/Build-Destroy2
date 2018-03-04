@@ -15,12 +15,6 @@ public class ObjectMouvement : Photon.PunBehaviour {
 
     void Start () {
 		cube = this.gameObject;
-        Vector3 targetPos = ArenaManager.instance.GetPlayerZone(PhotonNetwork.player.ID).transform.position;
-        z = Vector3.Distance(targetPos, Camera.main.transform.position) - 10;
-        if(z<0)
-        {
-            z = 5;
-        }
 	}
 
     void Update()
@@ -31,20 +25,19 @@ public class ObjectMouvement : Photon.PunBehaviour {
         }
         //Debug.Log(dropEnabled);
         Vector3 pos = Input.mousePosition;
-        //pos.z = z - Camera.main.transform.position.z
-        pos.z = z;
+        pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
 
         if (Input.GetMouseButton(0))
         {
             z = z + (float)0000.1;
-            //cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
+            cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
         if (Input.GetMouseButton(1))
         {
             z = z - (float)00000.1;
-            //cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
+            cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Alpha1))
@@ -54,10 +47,6 @@ public class ObjectMouvement : Photon.PunBehaviour {
         if(Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Alpha2))
         {
             cube.transform.Rotate(-Vector3.forward * 100 * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.Alpha3))
-        {
-            cube.transform.Rotate(-Vector3.right * 100 * Time.deltaTime);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
