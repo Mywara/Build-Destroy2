@@ -8,6 +8,7 @@ public class ObjectMouvement : MonoBehaviour {
     private GameObject cube;
     float z = 0;
     bool dropEnabled = true;
+    int collision = 0;
 
     void Start () {
 		cube = this.gameObject;
@@ -33,6 +34,7 @@ public class ObjectMouvement : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
+        if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
             if (dropEnabled)
             {
@@ -55,5 +57,22 @@ public class ObjectMouvement : MonoBehaviour {
     public void EnableDrop()
     {
         dropEnabled = true;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "bloc")
+        {
+            collision++;
+            Debug.Log("col " + collision);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "bloc") { 
+        collision--;
+        Debug.Log("col " + collision);
+        }
     }
 }
