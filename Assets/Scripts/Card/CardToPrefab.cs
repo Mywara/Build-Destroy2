@@ -15,6 +15,7 @@ public class CardToPrefab : Photon.PunBehaviour
 
     public void DestroyAndCreate()
     {
+        prefab = this.GetComponent<CardDisplay>().blockPrefab;
         Destroy(this.gameObject);
         PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
     }
