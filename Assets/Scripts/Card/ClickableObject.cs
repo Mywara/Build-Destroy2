@@ -11,7 +11,6 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             CardManager.instance.fillStock(this.gameObject);
-            Debug.Log("You right clicked a card... BRAVO!!!");
         }
     }
 }

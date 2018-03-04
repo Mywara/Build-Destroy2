@@ -345,7 +345,7 @@ Prefab:
     - target: {fileID: 224648826735129526, guid: bab4ec02248f4bc478c8911fed5580cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000029350792
+      value: -0.000001989559
       objectReference: {fileID: 0}
     - target: {fileID: 114785305211735834, guid: bab4ec02248f4bc478c8911fed5580cd,
         type: 2}
@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.0000036769338, y: 2}
+  m_AnchoredPosition: {x: 0.00002617502, y: 2}
   m_SizeDelta: {x: 0, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &191718501
@@ -757,6 +757,11 @@ Prefab:
       propertyPath: MoneyText
       value: 
       objectReference: {fileID: 495710554}
+    - target: {fileID: 114960848602499484, guid: 766ac48222fff604bbca757b95f247ff,
+        type: 2}
+      propertyPath: upgGet
+      value: 
+      objectReference: {fileID: 495710555}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766ac48222fff604bbca757b95f247ff, type: 2}
   m_IsPrefabParent: 0
@@ -870,7 +875,7 @@ Prefab:
     - target: {fileID: 224386464690036276, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00003419451
+      value: 0.0000043425557
       objectReference: {fileID: 0}
     - target: {fileID: 224215733099502378, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
@@ -902,6 +907,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 495710551}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &495710555 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114821888486017466, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+    type: 2}
+  m_PrefabInternal: {fileID: 495710551}
+  m_Script: {fileID: 11500000, guid: 8e2506aacc9a7b44e8105bd690ba3bde, type: 3}
 --- !u!1 &829958494
 GameObject:
   m_ObjectHideFlags: 0

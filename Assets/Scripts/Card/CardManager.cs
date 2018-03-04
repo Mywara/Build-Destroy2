@@ -62,7 +62,6 @@ public class CardManager : MonoBehaviour
     public int stockCount = 0;
     public GameObject cardJoin;
 
-
     /// <summary>
     /// Method to be called when you need to draw a hand of card
     /// </summary>
