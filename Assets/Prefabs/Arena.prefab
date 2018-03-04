@@ -80,6 +80,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceBetweenPlayers: 40
   nbPlayers: 6
-  PlayerZone: {fileID: 1631188712686760, guid: 26414138c47474237802e8612874a894, type: 2}
   playerZonesList: []
-  playerNamesList: []

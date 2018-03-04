@@ -20,8 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4218318495390624}
   - component: {fileID: 33806192244472790}
+  - component: {fileID: 65731065087191822}
   - component: {fileID: 23259962623708306}
   - component: {fileID: 54968152044806654}
+  - component: {fileID: 114802418757619226}
+  - component: {fileID: 114510116160447376}
   - component: {fileID: 114272821726252962}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,14 +114,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD:Assets/Resources/Cube.prefab
 --- !u!65 &65079192666907498
+=======
+--- !u!65 &65731065087191822
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl:Assets/Prefabs/Block/Cube.prefab
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017521981602020}
   m_Material: {fileID: 0}
+<<<<<<< HEAD:Assets/Resources/Cube.prefab
   m_IsTrigger: 1
+=======
+  m_IsTrigger: 0
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl:Assets/Prefabs/Block/Cube.prefab
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -134,11 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Resources/Cube.prefab
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> master
 --- !u!114 &114467876233534574
+=======
+--- !u!114 &114510116160447376
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl:Assets/Prefabs/Block/Cube.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -146,6 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017521981602020}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Resources/Cube.prefab
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -165,6 +181,12 @@ MonoBehaviour:
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114879872383827430
+=======
+  m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114802418757619226
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl:Assets/Prefabs/Block/Cube.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -172,6 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017521981602020}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Resources/Cube.prefab
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -234,3 +257,9 @@ MonoBehaviour:
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
 =======
 >>>>>>> master
+=======
+  m_Script: {fileID: 11500000, guid: b96603119166fdd41aa12652794611ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 0}
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl:Assets/Prefabs/Block/Cube.prefab

@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -339,6 +343,7 @@ Prefab:
       propertyPath: instantiationId
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 224423539372418916, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -438,6 +443,8 @@ Prefab:
       objectReference: {fileID: 0}
 =======
 >>>>>>> master
+=======
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9a33e84d84e9544bc388c5aef0fc0f, type: 2}
   m_IsPrefabParent: 0

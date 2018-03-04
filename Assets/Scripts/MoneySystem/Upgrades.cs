@@ -13,9 +13,14 @@ public class Upgrades : MonoBehaviour {
     private int cost_more_cards;     //Depends on number of cards in hands
     private int cost_more_stocks;    //Depends on number of stock
     private int cost_hidden_card;    //Depends on number of cards hidden and number of cards in hands
+<<<<<<< HEAD
     private int cost_draw_card;
     private int nbUpgrades = 1;
     private int nbCards;
+=======
+    private int cost_draw_card = 1500;
+    private int nbUpgrades = 1;
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
     public Text plusIncome;
     public PartyManager manageUI;
 
@@ -27,7 +32,6 @@ public class Upgrades : MonoBehaviour {
         plusIncome.text = "+ " + MoneySystem.instance.actualIncome;
         plusIncome.enabled = false;
         cost_draw_card = 1500;
-        nbCards = CardManager.instance.handSize;
     }
 
     public void usingcards()
@@ -48,10 +52,13 @@ public class Upgrades : MonoBehaviour {
     public void updateCost()
     {
         cost_inc_inc = (int)MoneySystem.instance.actualIncome * 2 / 3 * nbUpgrades;
+<<<<<<< HEAD
         cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000 + nbCardsHidden * 2000;
         cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000;
         cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.stockSize * 1000;
         cost_draw_card = 1500 + (nbCardsDrawn * nbCardsDrawn * 1500);
+=======
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
         cost_hidden_card = (int)MoneySystem.instance.actualIncome * 2 / 3;
         cost_more_cards = (int)MoneySystem.instance.actualIncome * 2 / 3;
         cost_more_stocks = (int)MoneySystem.instance.actualIncome * 2 / 3;
@@ -108,13 +115,16 @@ public class Upgrades : MonoBehaviour {
 
     public void drawACard()
     {
-        if (nbCards < CardManager.instance.handSize)
+        if (CardManager.instance.cardInHand.Count < CardManager.instance.handSize)
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
             {
                 manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
+<<<<<<< HEAD
                 nbCards++;
+=======
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
             }
         }
     }

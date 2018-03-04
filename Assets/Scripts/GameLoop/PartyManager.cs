@@ -67,7 +67,6 @@ public class PartyManager : Photon.PunBehaviour {
         UpdateMoney();
         UpdatePhaseName("Waiting for other players...");
         timer.text = "";
-        drawButton.gameObject.SetActive(false);
     }
 
     // Use this for initialization
@@ -280,6 +279,8 @@ public class PartyManager : Photon.PunBehaviour {
         waitingToStart = true;
         startPhaseTime = Time.time;
         UpdatePhaseName("Starting in...");
+        drawButton.gameObject.SetActive(false);
+
     }
 
     [PunRPC]
@@ -300,6 +301,7 @@ public class PartyManager : Photon.PunBehaviour {
             ChangeToBasicUI();
             AddMoney(MoneySystem.instance.actualIncome);
             upgcost.showIncome();
+            drawButton.gameObject.SetActive(true);
         }
 
         DrawPhase();
@@ -312,8 +314,13 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
+<<<<<<< HEAD
         CardManager.instance.DrawHand(CardManager.instance.handSize);
         drawButton.gameObject.SetActive(true);
+=======
+        CardManager.instance.DrawHand(CardManager.instance.handSize, CardManager.instance.stockSize);
+        drawButton.enabled = true;
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
     }
 
     [PunRPC]

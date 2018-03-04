@@ -6,8 +6,13 @@ public class ObjectMouvement : MonoBehaviour {
 
     // Use this for initialization
     private GameObject cube;
+<<<<<<< HEAD
     float z = 0;
     int collision = 0;
+=======
+    float z;
+
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
     void Start () {
 		cube = this.gameObject;
 	}
@@ -16,9 +21,8 @@ public class ObjectMouvement : MonoBehaviour {
     {
 
         Vector3 pos = Input.mousePosition;
-        pos.z = z - Camera.main.transform.position.z;
+        pos.z = transform.position.z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
-
 
         if (Input.GetMouseButton(0))
         {
@@ -33,8 +37,11 @@ public class ObjectMouvement : MonoBehaviour {
         }
         if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
+<<<<<<< HEAD
             cube.GetComponent<BoxCollider>().isTrigger= false;
             cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+=======
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
             Destroy(this);
         }
     }

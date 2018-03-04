@@ -62,7 +62,11 @@ public class CardManager : MonoBehaviour
     /// <param name="hand">Should be the handSize variable</param>
     public void DrawHand(int hand)
     {
+<<<<<<< HEAD
         // Reset the cardInHand list
+=======
+        // Reset various variables
+>>>>>>> parent of d83575d... Merge remote-tracking branch 'origin/Maxime-Branch' into DarkXolotl
         cardInHand.Clear();
 
         // Finds all of the card slots in the player's UI
