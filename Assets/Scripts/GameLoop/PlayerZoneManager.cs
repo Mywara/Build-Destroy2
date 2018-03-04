@@ -20,12 +20,14 @@ public class PlayerZoneManager : Photon.PunBehaviour {
     {
         blockHandler = other.GetComponent<ObjectMouvement>();
 
-        if(other)
+        if(blockHandler)
         {
             PhaseType phaseType = partyManager.GetCurrentPhase();
+            Transform playerZoneFocus = partyManager.playerZone.transform.GetChild(1);
+            Transform consideredFocus = gameObject.transform.GetChild(1);
 
-            if((phaseType == PhaseType.Build && !partyManager.TargettingPlayerZone())
-               || (phaseType == PhaseType.Destruct && partyManager.TargettingPlayerZone()))
+            if((phaseType == PhaseType.Build && !playerZoneFocus.position.Equals(consideredFocus.position))
+               || (phaseType == PhaseType.Destruct && playerZoneFocus.position.Equals(consideredFocus.position)))
             {
                 blockHandler.DisableDrop();
                 return;
@@ -35,6 +37,8 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+        blockHandler = other.GetComponent<ObjectMouvement>();
+
         if (blockHandler)
         {
             blockHandler.EnableDrop();

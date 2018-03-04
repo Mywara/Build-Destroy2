@@ -20,7 +20,6 @@ public class ObjectMouvement : MonoBehaviour {
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
 
-
         if (Input.GetMouseButton(0))
         {
             z = z + (float)0000.1;
@@ -33,7 +32,6 @@ public class ObjectMouvement : MonoBehaviour {
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
         if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
             if (dropEnabled)
@@ -45,6 +43,7 @@ public class ObjectMouvement : MonoBehaviour {
             else
             {
                 //TODO: give some feedback showing the player the access to this area is not allowed
+                Debug.Log("You are not allowed to drop your block in this area right now");
             }
         }
     }
