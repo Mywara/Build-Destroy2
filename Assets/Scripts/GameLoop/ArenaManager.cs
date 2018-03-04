@@ -7,6 +7,7 @@ public class ArenaManager : Photon.PunBehaviour {
     static public ArenaManager instance;
     public int distanceBetweenPlayers = 40;
     public int nbPlayers;
+    public GameObject PlayerZone;
 
     public List<GameObject> playerZonesList;
     public List<string> playerNamesList;
@@ -54,7 +55,7 @@ public class ArenaManager : Photon.PunBehaviour {
         if(nbPlayers == 1)
         {
             // instanciation de la zone de jeu
-            GameObject playerZone = PhotonNetwork.Instantiate("PlayerZone", Vector3.zero, Quaternion.identity, 0);
+            GameObject playerZone = Instantiate(PlayerZone, Vector3.zero, Quaternion.identity);
 
             // la zone de jeu créée est définie comme fille du GameObject Arena auquel est rattaché ce script
             playerZone.transform.parent = gameObject.transform;
@@ -70,7 +71,7 @@ public class ArenaManager : Photon.PunBehaviour {
             for (int i = 0; i < 2; i++)
             {
                 // instanciation de la zone de jeu
-                GameObject playerZone = PhotonNetwork.Instantiate("PlayerZone", new Vector3(Mathf.Pow(-1, i) * distanceBetweenPlayers / 2f, 0f, 0f), Quaternion.identity, 0);
+                GameObject playerZone = Instantiate(PlayerZone, new Vector3(Mathf.Pow(-1, i) * distanceBetweenPlayers / 2f, 0f, 0f), Quaternion.identity);
 
                 // la zone de jeu créée est définie comme fille du GameObject Arena auquel est rattaché ce script
                 playerZone.transform.parent = gameObject.transform;
@@ -100,7 +101,7 @@ public class ArenaManager : Photon.PunBehaviour {
             );
 
             // instanciation de la zone de jeu
-            newPlayerZone = PhotonNetwork.Instantiate("PlayerZone", spawnPosition, Quaternion.identity, 0);
+            newPlayerZone = Instantiate(PlayerZone, spawnPosition, Quaternion.identity);
 
             // la zone de jeu créée est définie comme fille du GameObject Arena auquel est rattaché ce script
             newPlayerZone.transform.parent = gameObject.transform;
