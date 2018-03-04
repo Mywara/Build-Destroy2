@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d225ea3e5afa234f9ad25adc1f988a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detroyObject: {fileID: 0}
+  detroyObject: {fileID: 1067308992562758}
   prefab: {fileID: 1017521981602020, guid: 055f59100bc98784fbf1a5a7915ad2a9, type: 2}
 --- !u!114 &114080313902988096
 MonoBehaviour:

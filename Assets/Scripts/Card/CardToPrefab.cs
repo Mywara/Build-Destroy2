@@ -17,5 +17,6 @@ public class CardToPrefab : MonoBehaviour {
         Destroy(this.gameObject);
         Quaternion q = new Quaternion();
         Instantiate(prefab, Vector3.zero, q);
+        Debug.Log(MoneySystem.GetMoney());
     }
 }
