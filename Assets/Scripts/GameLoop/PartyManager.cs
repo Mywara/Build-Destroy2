@@ -309,7 +309,7 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
-        CardManager.instance.DrawHand(CardManager.instance.handSize);
+        CardManager.instance.DrawHand(CardManager.instance.handSize, CardManager.instance.stockSize);
         drawButton.enabled = true;
     }
 

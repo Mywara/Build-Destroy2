@@ -38,4 +38,17 @@ public class CardDisplay : MonoBehaviour
         GameObject item = Instantiate(blockPrefab, Vector3.zero, Quaternion.identity);
         item.transform.position = mousePos;
     }
+
+    /// <summary>
+    /// Method to be called when the user rights click the card
+    /// It will send the card to the stock, changing it's tag
+    /// </summary>
+    public void StockCard()
+    {
+        this.gameObject.transform.SetParent(CardManager.instance.stockGrid.transform, false);
+        this.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        this.gameObject.transform.localPosition = Vector3.zero;
+        this.gameObject.tag = "Stock_Cards";
+        CardManager.instance.stockCount++;
+    }
 }

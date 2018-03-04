@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Cards
+  - Stock_Cards
   layers:
   - Default
   - TransparentFX
