@@ -295,7 +295,6 @@ public class PartyManager : Photon.PunBehaviour {
             ChangeToBasicUI();
             AddMoney(MoneySystem.instance.actualIncome);
             upgcost.showIncome();
-            upgcost.onDrawButton();
         }
 
         DrawPhase();

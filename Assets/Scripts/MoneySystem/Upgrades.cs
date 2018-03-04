@@ -13,9 +13,9 @@ public class Upgrades : MonoBehaviour {
     private int cost_more_cards;     //Depends on number of cards in hands
     private int cost_more_stocks;    //Depends on number of stock
     private int cost_hidden_card;    //Depends on number of cards hidden and number of cards in hands
-    private int cost_draw_card = 1500;
+    private int cost_draw_card;
     private int nbUpgrades = 1;
-    private bool draw_a_card = false;
+    private int nbCards;
     public Text plusIncome;
     public PartyManager manageUI;
 
@@ -27,6 +27,7 @@ public class Upgrades : MonoBehaviour {
         plusIncome.text = "+ " + MoneySystem.instance.actualIncome;
         plusIncome.enabled = false;
         cost_draw_card = 1500;
+        nbCards = CardManager.instance.handSize;
     }
 
     public void showIncome()
@@ -37,11 +38,6 @@ public class Upgrades : MonoBehaviour {
     public void eraseIncome()
     {
         plusIncome.enabled = false; 
-    }
-
-    public void onDrawButton()
-    {
-        draw_a_card = false;
     }
 
     public void updateCost()
@@ -102,13 +98,13 @@ public class Upgrades : MonoBehaviour {
 
     public void drawACard()
     {
-        if (draw_a_card!=true)
+        if (nbCards < CardManager.instance.handSize)
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
             {
                 manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
-                draw_a_card = true;
+                nbCards++;
             }
         }
     }

@@ -59,8 +59,6 @@ public class CardManager : MonoBehaviour
     /// <param name="hand">Should be the handSize variable</param>
     public void DrawHand(int hand)
     {
-        Debug.Log("hand value : " + hand.ToString());
-
         // Reset the cardInHand list
         cardInHand.Clear();
 
@@ -69,8 +67,6 @@ public class CardManager : MonoBehaviour
         {
             cardInHand.Add(obj);
         }
-
-        Debug.Log("Number of cardinhand : " + cardInHand.Count);
 
         if (cardInHand.Count < hand)
         {
@@ -95,8 +91,6 @@ public class CardManager : MonoBehaviour
                 Destroy(item);
             }
         }
-
-        Debug.Log("Number of slots after the ifs : " + cardInHand.Count);
 
         // Randomly assign a card in each slot
         foreach (var obj in cardInHand)
