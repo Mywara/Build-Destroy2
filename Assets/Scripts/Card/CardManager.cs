@@ -48,6 +48,7 @@ public class CardManager : MonoBehaviour
     // Variables declarations
     public List<Card> cardList; // List of possible cards
     public List<GameObject> cardInHand; // List of the UI objects in the player's hand
+    public List<GameObject> cardInStock; // List of the UI objects in the player's stock
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
     public int handSize = 5;
