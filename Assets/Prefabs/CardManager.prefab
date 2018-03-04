@@ -62,7 +62,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f986ffe65cfa8842966c12d685dab4e, type: 2}
   - {fileID: 11400000, guid: cb8d1caebd924754da7f7cbf594ceae7, type: 2}
   cardInHand: []
+  cardInStock: []
   cardSlotPrefab: {fileID: 1067308992562758, guid: edd7b9dec393e304da38de6c552bbb0f,
     type: 2}
   grid: {fileID: 0}
+  stockGrid: {fileID: 0}
   handSize: 5
+  stockSize: 1
+  stockCount: 0

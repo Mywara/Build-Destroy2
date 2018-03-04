@@ -989,10 +989,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4651790940913232}
   - component: {fileID: 54294948778247938}
+<<<<<<< HEAD
   - component: {fileID: 114843120023751096}
   - component: {fileID: 114021188795431750}
   - component: {fileID: 114868486169143586}
   - component: {fileID: 65156500070189678}
+=======
+  - component: {fileID: 114585951525273364}
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
   m_Layer: 0
   m_Name: FakeTower
   m_TagString: bloc
@@ -10128,7 +10132,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114021188795431750
+--- !u!114 &114585951525273364
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -10136,9 +10140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1477145865352868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   ownerId: 0
   group: 0
   OwnerShipWasTransfered: 0
@@ -10230,3 +10235,5 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+=======
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712

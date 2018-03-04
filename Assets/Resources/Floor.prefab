@@ -20,12 +20,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4078086948654160}
   - component: {fileID: 33648294249622824}
+  - component: {fileID: 64136192037208794}
   - component: {fileID: 23980400107936946}
   - component: {fileID: 54843808590679272}
+<<<<<<< HEAD
   - component: {fileID: 114911615764235140}
   - component: {fileID: 114240127972283824}
   - component: {fileID: 114050056941964796}
   - component: {fileID: 65928427347794010}
+=======
+  - component: {fileID: 114224996814276276}
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
   m_Layer: 0
   m_Name: Floor
   m_TagString: bloc
@@ -102,6 +107,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD
 --- !u!65 &65928427347794010
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -181,11 +187,18 @@ MonoBehaviour:
     InterpolateLerpSpeed: 0
 --- !u!114 &114240127972283824
 MonoBehaviour:
+=======
+--- !u!64 &64136192037208794
+MeshCollider:
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782496559727774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
@@ -206,6 +219,14 @@ MonoBehaviour:
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114911615764235140
+=======
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114224996814276276
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -213,6 +234,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782496559727774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
+  m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

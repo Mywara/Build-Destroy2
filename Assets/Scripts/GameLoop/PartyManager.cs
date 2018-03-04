@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum PhaseType
-{
-    Draw, Steal, Build, Destruct, Upgrade, Empty
-};
-
 public class PartyManager : Photon.PunBehaviour {
 
     public float drawPhaseTime = 5f;
@@ -312,8 +307,9 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
-        CardManager.instance.DrawHand(CardManager.instance.handSize);
+        CardManager.instance.DrawHand(CardManager.instance.handSize, CardManager.instance.stockSize);
         drawButton.gameObject.SetActive(true);
+        drawButton.enabled = true;
     }
 
     [PunRPC]
@@ -382,21 +378,6 @@ public class PartyManager : Photon.PunBehaviour {
         }
     }
 
-
-    public PhaseType GetCurrentPhase() {
-        if (drawPhase)
-            return PhaseType.Draw;
-        if (stealPhase)
-            return PhaseType.Steal;
-        if (buildPhase)
-            return PhaseType.Build;
-        if (destructionPhase)
-            return PhaseType.Destruct;
-        if (upgradePhase)
-            return PhaseType.Upgrade;
-
-        return PhaseType.Empty;
-    }
 
     public void Ready()
     {
