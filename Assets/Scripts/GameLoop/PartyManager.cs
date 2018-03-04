@@ -29,10 +29,10 @@ public class PartyManager : Photon.PunBehaviour {
     public Text moneyUpgrade;
     public Upgrades upgcost;
     public Button drawButton;
+    public GameObject playerZone;
 
-    private GameObject playerZone;
     private CameraController camController;
-    public int PlayerID = 1;
+    private int PlayerID = 1;
     private int nbMaxPlayer;
     private int nbPlayerReady;
     private float startPhaseTime;
@@ -271,6 +271,13 @@ public class PartyManager : Photon.PunBehaviour {
                 }
             }
         }
+    }
+
+    public bool TargettingPlayerZone()
+    {
+        Transform focusPoint = playerZone.transform.GetChild(1);
+
+        return (focusPoint.position.Equals(camController.targetToRotateAround.position));
     }
 
     [PunRPC]
