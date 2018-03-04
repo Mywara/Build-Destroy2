@@ -32,11 +32,16 @@ MonoBehaviour:
   - BuildPhase
   - ChangeToBasicUI
   - ChangeToUpgradeUI
+  - ChangeToWinUI
   - Chat
   - DestroyRpc
   - DestructionPhase
   - DrawPhase
+  - GameIsOver
+  - GameStarted
   - InstantiateRpc
+  - LeaveRoom
+  - MoveDown
   - NewPlayerRdy
   - PickupItemInit
   - PunPickup
@@ -50,5 +55,7 @@ MonoBehaviour:
   - Turn
   - UpdateTimer
   - UpdateTimerUpgrade
+  - UpdateTimerWin
   - UpgradePhase
+  - WinPhase
   DisableAutoOpenWizard: 1

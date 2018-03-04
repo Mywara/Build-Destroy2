@@ -21,14 +21,14 @@ GameObject:
   - component: {fileID: 4076041087534256}
   - component: {fileID: 23234761349956704}
   - component: {fileID: 33287386339136602}
-  - component: {fileID: 64074465072345998}
   - component: {fileID: 114567713478919244}
   - component: {fileID: 54069568453436350}
   - component: {fileID: 114861280988492480}
   - component: {fileID: 114037778691624022}
+  - component: {fileID: 65992282303941444}
   m_Layer: 0
   m_Name: Torus
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398404007318388}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 5282b5a6a909fef44b6c3cace4a68cb2, type: 3}
 --- !u!54 &54069568453436350
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -102,20 +102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64074465072345998
-MeshCollider:
+--- !u!65 &65992282303941444
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398404007318388}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 2, z: 7.999999}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!114 &114037778691624022
 MonoBehaviour:
   m_ObjectHideFlags: 1
