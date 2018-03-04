@@ -51,6 +51,7 @@ public class PartyManager : Photon.PunBehaviour {
     private bool gameStarted = false;
     private bool waitingToStart = false;
     private string winnerName = "";
+    public GameObject stealUI;
 
     static public PartyManager instance;
 
@@ -85,6 +86,7 @@ public class PartyManager : Photon.PunBehaviour {
         timer.text = "";
         drawButton.gameObject.SetActive(false);
         ChangeToBasicUI();
+        stealUI.SetActive(true);
     }
 
     // Use this for initialization
@@ -107,6 +109,7 @@ public class PartyManager : Photon.PunBehaviour {
             return;
         }
         //Turn();
+        stealUI.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -187,6 +190,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (stealPhase)
         {
+            stealUI.SetActive(true);
             if (PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + stealPhaseTime - Time.time);
@@ -213,6 +217,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (buildPhase)
         {
+            stealUI.SetActive(false);
             if (PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + buildPhaseTime - Time.time);
