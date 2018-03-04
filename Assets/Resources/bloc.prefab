@@ -494,6 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dropSFX: {fileID: 8300000, guid: 1534613e303af00449679ddcc3a7604a, type: 3}
   dropEnabled: 0
   notCollision: 1
 --- !u!114 &114564950963721498

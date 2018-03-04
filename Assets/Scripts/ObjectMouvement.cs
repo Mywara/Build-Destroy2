@@ -9,6 +9,8 @@ public class ObjectMouvement : Photon.PunBehaviour {
     int collision = 0;
     private Transform[] cubes;
 
+    public AudioClip _dropSFX;
+
     // TEST
     public bool dropEnabled = false;
     public bool notCollision = true;
@@ -83,6 +85,12 @@ public class ObjectMouvement : Photon.PunBehaviour {
                     }
                     
                 }
+
+                // Play an SFX when the player drops a block
+                AudioSource _as = this.gameObject.AddComponent<AudioSource>();
+                _as.clip = _dropSFX;
+                _as.Play();
+                Destroy(_as);
 
                 cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 
