@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114649240879896090}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -700,7 +700,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 11
+  instantiationId: 11
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
+--- !u!114 &114585657853498630
+=======
 --- !u!114 &114987225025110888
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 65130578265339654}
   - component: {fileID: 23942880640156692}
   - component: {fileID: 114563455059529770}
+  - component: {fileID: 65721527475560180}
   m_Layer: 0
   m_Name: TestCube
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,14 +85,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644509846245188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD:Assets/Resources/TestCube.prefab
+--- !u!65 &65721527475560180
+=======
 --- !u!65 &65130578265339654
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712:Assets/Prefabs/Block/TestCube.prefab
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644509846245188}
   m_Material: {fileID: 0}
+<<<<<<< HEAD:Assets/Resources/TestCube.prefab
+  m_IsTrigger: 1
+=======
   m_IsTrigger: 0
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712:Assets/Prefabs/Block/TestCube.prefab
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -118,7 +127,12 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
+<<<<<<< HEAD:Assets/Resources/TestCube.prefab
+  viewIdField: 4
+  instantiationId: 4
+=======
   viewIdField: 0
   instantiationId: -1
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712:Assets/Prefabs/Block/TestCube.prefab
   currentMasterID: -1
   isRuntimeInstantiated: 0

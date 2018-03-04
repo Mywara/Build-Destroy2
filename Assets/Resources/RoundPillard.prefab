@@ -23,10 +23,17 @@ GameObject:
   - component: {fileID: 136226010037786670}
   - component: {fileID: 23822154968195930}
   - component: {fileID: 54002025993682026}
+<<<<<<< HEAD
+  - component: {fileID: 114744389989119604}
+  - component: {fileID: 114561402584067690}
+  - component: {fileID: 114972623330671972}
+  - component: {fileID: 65863750344824178}
+=======
   - component: {fileID: 114972975073837310}
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
   m_Layer: 0
   m_Name: RoundPillard
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +107,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD
+--- !u!65 &65863750344824178
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059371325278682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &114561402584067690
+=======
 --- !u!114 &114972975073837310
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,8 +134,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 6
+  instantiationId: 6
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
+--- !u!114 &114744389989119604
+MonoBehaviour:
+=======
 --- !u!136 &136226010037786670
 CapsuleCollider:
+>>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}

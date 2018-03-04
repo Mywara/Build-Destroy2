@@ -32,6 +32,11 @@ public class Upgrades : MonoBehaviour {
         nbCards = CardManager.instance.handSize;
     }
 
+    public void usingcards()
+    {
+        nbCards--;
+    }
+
     public void showIncome()
     {
         plusIncome.enabled = true;
@@ -47,7 +52,7 @@ public class Upgrades : MonoBehaviour {
         cost_inc_inc = (int)MoneySystem.instance.actualIncome * 2 / 3 * nbUpgrades;
         cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000 + nbCardsHidden * 2000;
         cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000;
-        cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3;
+        cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.stockSize * 1000;
         cost_draw_card = 1500 + (nbCardsDrawn * nbCardsDrawn * 1500);
     }
 
@@ -86,6 +91,7 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_more_stocks))
         {
+            CardManager.instance.stockSize++;
             updateCost();
         }
     }
