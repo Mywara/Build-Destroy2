@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMouvement : MonoBehaviour {
+public class ObjectMouvement : Photon.PunBehaviour {
 
     // Use this for initialization
     private GameObject cube;
@@ -16,6 +16,10 @@ public class ObjectMouvement : MonoBehaviour {
 
     void Update()
     {
+        if(!photonView.isMine)
+        {
+            return;
+        }
         Vector3 pos = Input.mousePosition;
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
