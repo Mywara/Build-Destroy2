@@ -24,11 +24,17 @@ GameObject:
   - component: {fileID: 54968152044806654}
   - component: {fileID: 114272821726252962}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 114467876233534574}
   - component: {fileID: 114879872383827430}
   - component: {fileID: 65079192666907498}
 =======
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
+=======
+  - component: {fileID: 114467876233534574}
+  - component: {fileID: 114879872383827430}
+  - component: {fileID: 65079192666907498}
+>>>>>>> master
   m_Layer: 0
   m_Name: Cube
   m_TagString: bloc
@@ -129,6 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 --- !u!114 &114467876233534574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,5 +229,8 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+<<<<<<< HEAD
 =======
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
+=======
+>>>>>>> master

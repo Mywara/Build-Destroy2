@@ -19,21 +19,26 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4098499152683406}
-  - component: {fileID: 114300691901229694}
   - component: {fileID: 23832630020608100}
   - component: {fileID: 33606819305059890}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
   - component: {fileID: 114680797734485134}
   - component: {fileID: 114038957878775740}
   - component: {fileID: 114655878031130880}
   - component: {fileID: 54076024494693410}
   - component: {fileID: 65703249431368376}
+<<<<<<< HEAD
 =======
   - component: {fileID: 114690910113428528}
   - component: {fileID: 64838857878926860}
   - component: {fileID: 114479423686901292}
   - component: {fileID: 114673373918807202}
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
+=======
+>>>>>>> master
   m_Layer: 0
   m_Name: Arch
   m_TagString: bloc
@@ -95,13 +100,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956052933524940}
   m_Mesh: {fileID: 0}
---- !u!64 &64838857878926860
-MeshCollider:
+--- !u!54 &54076024494693410
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956052933524940}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -113,6 +121,7 @@ MeshCollider:
   m_CollisionDetection: 0
 --- !u!65 &65703249431368376
 BoxCollider:
+<<<<<<< HEAD
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -136,17 +145,19 @@ BoxCollider:
 --- !u!114 &114300691901229694
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
 MonoBehaviour:
+=======
+>>>>>>> master
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1956052933524940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 16342205, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _entityType: 0
---- !u!114 &114479423686901292
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114038957878775740
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -154,10 +165,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956052933524940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b931faadef7f994c8635b6af9506df3, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114673373918807202
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 4
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    InterpolateMoveTowardsAcceleration: 2
+    InterpolateMoveTowardsDeceleration: 2
+    InterpolateSpeedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: -1
+        value: 0
+        inSlope: 0
+        outSlope: Infinity
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 4
+        value: 4
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+    DrawErrorGizmo: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 2
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &114655878031130880
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -165,9 +230,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956052933524940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da54fbfafcb68ba469e3798277523a0f, type: 3}
+  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< HEAD
   ownerId: 0
   group: 0
@@ -186,6 +252,9 @@ MonoBehaviour:
   isRuntimeInstantiated: 0
 =======
 --- !u!114 &114690910113428528
+=======
+--- !u!114 &114680797734485134
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -193,9 +262,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956052933524940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 185759285, guid: 0472bdc8d6d15384d98f22ee34302f9c, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _quads:
   - _indices: 000000000100000002000000010000000300000002000000
     _distinctIndices: 00000000010000000200000003000000
@@ -1312,3 +1382,20 @@ MonoBehaviour:
   m_SelectedEdges: []
   m_selectedTriangles: 
 >>>>>>> 126fbf56fbad23f15201481a0adce5c68a9ed712
+=======
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 14
+  instantiationId: 14
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
+>>>>>>> master

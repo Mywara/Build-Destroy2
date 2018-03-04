@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -265,6 +265,7 @@ Prefab:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1281140098}
+<<<<<<< HEAD
     - target: {fileID: 114960848602499484, guid: 766ac48222fff604bbca757b95f247ff,
         type: 2}
       propertyPath: stockGrid
@@ -275,10 +276,16 @@ Prefab:
       propertyPath: useCards
       value: 
       objectReference: {fileID: 882696688}
+=======
+    - target: {fileID: 1453695015694140, guid: 766ac48222fff604bbca757b95f247ff, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 766ac48222fff604bbca757b95f247ff, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &882696687
+--- !u!1001 &495710551
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -408,6 +415,7 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 77.953
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 224265914667627698, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -428,6 +436,8 @@ Prefab:
       propertyPath: destructionPhaseTime
       value: 119
       objectReference: {fileID: 0}
+=======
+>>>>>>> master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9a33e84d84e9544bc388c5aef0fc0f, type: 2}
   m_IsPrefabParent: 0
@@ -481,9 +491,9 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!114 &1281140098 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114933443830876236, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+  m_PrefabParentObject: {fileID: 114477511714224264, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
     type: 2}
-  m_PrefabInternal: {fileID: 882696687}
+  m_PrefabInternal: {fileID: 495710551}
   m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1285482986
 Prefab:
@@ -533,6 +543,11 @@ Prefab:
         type: 2}
       propertyPath: instantiationId
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114930080498746302, guid: 274194a54de3e4c5981ea5568bfc862c,
+        type: 2}
+      propertyPath: distanceBetweenPlayers
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274194a54de3e4c5981ea5568bfc862c, type: 2}
@@ -652,12 +667,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4807524641788774, guid: e646fb33fcfe40a4dbb99e43d94fc370,
     type: 2}
   m_PrefabInternal: {fileID: 1818078595}
---- !u!114 &2001242088 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114856613169238988, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
-    type: 2}
-  m_PrefabInternal: {fileID: 882696687}
-  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2013552209
 GameObject:
   m_ObjectHideFlags: 0

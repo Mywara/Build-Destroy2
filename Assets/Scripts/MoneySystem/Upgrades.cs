@@ -10,14 +10,12 @@ public class Upgrades : MonoBehaviour {
     public Text costMoreStock;
     public Text costHiddenCard;
     private int cost_inc_inc;
-    private int cost_more_cards; 
-    private int cost_more_stocks;    
-    private int cost_hidden_card;    
+    private int cost_more_cards;     //Depends on number of cards in hands
+    private int cost_more_stocks;    //Depends on number of stock
+    private int cost_hidden_card;    //Depends on number of cards hidden and number of cards in hands
     private int cost_draw_card;
     private int nbUpgrades = 1;
     private int nbCards;
-    private int nbCardsHidden = 1;
-    private int nbCardsDrawn = 0;
     public Text plusIncome;
     public PartyManager manageUI;
 
@@ -50,10 +48,17 @@ public class Upgrades : MonoBehaviour {
     public void updateCost()
     {
         cost_inc_inc = (int)MoneySystem.instance.actualIncome * 2 / 3 * nbUpgrades;
+<<<<<<< HEAD
         cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000 + nbCardsHidden * 2000;
         cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000;
         cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.stockSize * 1000;
         cost_draw_card = 1500 + (nbCardsDrawn * nbCardsDrawn * 1500);
+=======
+        cost_hidden_card = (int)MoneySystem.instance.actualIncome * 2 / 3;
+        cost_more_cards = (int)MoneySystem.instance.actualIncome * 2 / 3;
+        cost_more_stocks = (int)MoneySystem.instance.actualIncome * 2 / 3;
+        cost_draw_card = 1500;
+>>>>>>> master
     }
 
     public void updateCostText()
@@ -100,7 +105,6 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_hidden_card))
         {
-            nbCardsHidden++;
             updateCost();
         }
     }
@@ -114,7 +118,6 @@ public class Upgrades : MonoBehaviour {
                 manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
                 nbCards++;
-                updateCost();
             }
         }
     }

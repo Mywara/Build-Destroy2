@@ -48,27 +48,25 @@ public class CardManager : MonoBehaviour
     // Variables declarations
     public List<Card> cardList; // List of possible cards
     public List<GameObject> cardInHand; // List of the UI objects in the player's hand
-    public List<GameObject> cardInStock; // List of the UI objects in the player's stock
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
-    public GridLayoutGroup stockGrid; // The gridLayoutGroup is the scalable stock of the player
     public int handSize = 5;
+<<<<<<< HEAD
     public int stockSize = 1;
     public int stockCount = 0;
     public Upgrades useCards;
+=======
+>>>>>>> master
 
 
     /// <summary>
     /// Method to be called when you need to draw a hand of card
     /// </summary>
     /// <param name="hand">Should be the handSize variable</param>
-    /// <param name="stock">Should be the stockSize variable</param>
-    public void DrawHand(int hand, int stock)
+    public void DrawHand(int hand)
     {
         // Reset the cardInHand list
-        // Reset various variables
         cardInHand.Clear();
-        stockCount = 0;
 
         // Finds all of the card slots in the player's UI
         foreach (var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Cards"))
@@ -76,6 +74,7 @@ public class CardManager : MonoBehaviour
             cardInHand.Add(obj);
         }
 
+<<<<<<< HEAD
         // Counts the amount of cards in the stock
         foreach(var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Stock_Cards"))
         {
@@ -94,6 +93,8 @@ public class CardManager : MonoBehaviour
             }
         }
 
+=======
+>>>>>>> master
         if (cardInHand.Count < hand)
         {
             while (cardInHand.Count < hand)
@@ -169,10 +170,5 @@ public class CardManager : MonoBehaviour
     public void HandExtension()
     {
         this.handSize++;
-    }
-
-    public bool CheckStock()
-    {
-        return stockCount < stockSize;
     }
 }

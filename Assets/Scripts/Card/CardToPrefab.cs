@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class CardToPrefab : Photon.PunBehaviour
-//public class CardToPrefab : MonoBehaviour
 {
 
     public GameObject detroyObject;
@@ -9,15 +10,19 @@ public class CardToPrefab : Photon.PunBehaviour
     public Upgrades drawCards;
 
     // Use this for initialization
+<<<<<<< HEAD
     void Start()
     {
         //prefab = this.gameObject.GetComponent<CardDisplay>().blockPrefab;
     }
+=======
+    void Start () {
+		
+	}
+>>>>>>> master
 
     public void DestroyAndCreate()
     {
-        // If we play the card from the stock, reduce the count
-        if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
         prefab = this.GetComponent<CardDisplay>().blockPrefab;
         Destroy(this.gameObject);
         drawCards.usingcards();
