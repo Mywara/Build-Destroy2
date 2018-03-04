@@ -20,15 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4410162373683224}
   - component: {fileID: 33315548005870158}
+  - component: {fileID: 65381536126303386}
   - component: {fileID: 23088112602231242}
   - component: {fileID: 54352518433790336}
   - component: {fileID: 114229896302537884}
   - component: {fileID: 114141613195050952}
   - component: {fileID: 114077790846719088}
-  - component: {fileID: 65166891015396892}
   m_Layer: 0
   m_Name: wall
-  m_TagString: bloc
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,14 +102,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65166891015396892
+--- !u!65 &65381536126303386
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1700972843585496}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -201,8 +201,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114229896302537884

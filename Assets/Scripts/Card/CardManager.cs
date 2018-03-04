@@ -52,6 +52,8 @@ public class CardManager : MonoBehaviour
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
     public int handSize = 5;
+    public int stockSize = 1;
+    public int stockCount = 0;
 
 
     /// <summary>
@@ -67,6 +69,24 @@ public class CardManager : MonoBehaviour
         foreach (var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Cards"))
         {
             cardInHand.Add(obj);
+        }
+
+        // Counts the amount of cards in the stock
+        foreach(var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Stock_Cards"))
+        {
+            cardInStock.Add(obj);
+            stockCount++;
+        }
+
+        // If we ever have too many card in the stock, remove the extras
+        Debug.Log("Stock Size is : " + stockSize + " Stock Count is : " + stockCount);
+        if(stockCount > stockSize)
+        {
+            while(stockCount > stockSize)
+            {
+                Destroy(cardInStock[stockCount - 1]);
+                stockCount--;
+            }
         }
 
         if (cardInHand.Count < hand)
@@ -144,5 +164,20 @@ public class CardManager : MonoBehaviour
     public void HandExtension()
     {
         this.handSize++;
+    }
+
+    public bool CheckStock()
+    {
+        return stockCount < stockSize;
+    }
+
+    public int countCards()
+    {
+        cardInHand.Clear();
+        foreach (var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Cards"))
+        {
+            cardInHand.Add(obj);
+        }
+        return cardInHand.Count;
     }
 }
