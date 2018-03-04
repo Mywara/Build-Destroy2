@@ -11,6 +11,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
 
     // TEST
     public bool dropEnabled = false;
+    public bool notCollision = true;
 
     void Start () {
 		cube = this.gameObject;
@@ -51,9 +52,10 @@ public class ObjectMouvement : Photon.PunBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         //if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            if (dropEnabled)
+            if (dropEnabled && notCollision)
             {
                 //cube.GetComponent<BoxCollider>().isTrigger = false;
+                
 
                 cubes = cube.transform.GetComponentsInChildren<Transform>();
                 Debug.Log("lenght" + cubes.Length);
@@ -72,7 +74,8 @@ public class ObjectMouvement : Photon.PunBehaviour {
                 }
 
                 cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                Destroy(this);
+                
+                photonView.RPC("RbToNotKinematicAndDestory", PhotonTargets.AllViaServer);
             }
             else
             {
@@ -98,7 +101,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
         {
             //Debug.Log("trigger enter with " + otherGO.name);
-            DisableDrop();
+            notCollision = false;
         }   
     }
 
@@ -108,8 +111,14 @@ public class ObjectMouvement : Photon.PunBehaviour {
         if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
         {
             //Debug.Log("trigger exit with " + otherGO.name);
-            EnableDrop();
+            notCollision = true;
         } 
     }
-    
+
+    [PunRPC]
+    private void RbToNotKinematicAndDestory()
+    {
+        cube.GetComponent<Rigidbody>().isKinematic = false;
+        Destroy(this);
+    }
 }
