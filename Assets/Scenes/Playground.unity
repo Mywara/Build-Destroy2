@@ -345,7 +345,7 @@ Prefab:
     - target: {fileID: 224648826735129526, guid: bab4ec02248f4bc478c8911fed5580cd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000017694405
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 114785305211735834, guid: bab4ec02248f4bc478c8911fed5580cd,
         type: 2}
@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.0000066950442, y: 2}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 0, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &191718501
@@ -865,7 +865,7 @@ Prefab:
     - target: {fileID: 224386464690036276, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000023822535
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224215733099502378, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
@@ -876,6 +876,11 @@ Prefab:
         type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114141874739172450, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9a33e84d84e9544bc388c5aef0fc0f, type: 2}
@@ -929,7 +934,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495710552}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1191,7 +1196,7 @@ RectTransform:
   - {fileID: 107849304}
   - {fileID: 1731198868}
   m_Father: {fileID: 495710552}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1317,7 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd94209e967c6a4287a2901d4dba961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tbPlayerName: {fileID: 0}
 --- !u!1001 &1285482986
 Prefab:
   m_ObjectHideFlags: 0
@@ -1907,7 +1911,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495710552}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

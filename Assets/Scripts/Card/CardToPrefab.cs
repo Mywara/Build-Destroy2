@@ -22,7 +22,7 @@ public class CardToPrefab : Photon.PunBehaviour
             Debug.Log("Party Manager could not be retrieved from Card To Prefab component");
         }
         MoneyText = partyManager.transform.GetChild(0).transform.GetChild(4).GetComponent<Text>();
-        IncomeText = partyManager.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>();
+        IncomeText = partyManager.transform.GetChild(0).transform.GetChild(12).GetComponent<Text>();
 
     }
 
@@ -38,7 +38,7 @@ public class CardToPrefab : Photon.PunBehaviour
             if (MoneySystem.instance.BuyItem(costblock))
             {
                 MoneyText.text = "Money : " + MoneySystem.instance.money + "$";
-                //IncomeText.text = IncomeText.text+ "\n -" + costblock + "$";
+                IncomeText.text = IncomeText.text+ "\n -" + costblock + "$";
 
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
