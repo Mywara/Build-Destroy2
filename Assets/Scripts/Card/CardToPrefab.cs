@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+<<<<<<< HEAD
 public class CardToPrefab : Photon.PunBehaviour
-//public class CardToPrefab : MonoBehaviour
+=======
+public class CardToPrefab : MonoBehaviour
+>>>>>>> DarkXolotl
 {
 
     public GameObject detroyObject;
