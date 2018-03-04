@@ -52,17 +52,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardList:
-  - {fileID: 11400000, guid: 432064bce59eaa646ada179b6c73d340, type: 2}
-  - {fileID: 11400000, guid: 95efdee42271e6f49a81e48dbc7897fb, type: 2}
-  - {fileID: 11400000, guid: 15d40e3a6ac639f4c89dbe3ea5021dd2, type: 2}
-  - {fileID: 11400000, guid: 587a427b85d40c54b977cba25210061d, type: 2}
-  - {fileID: 11400000, guid: bb12c3ab9eddd0e49a8d359931add60d, type: 2}
-  - {fileID: 11400000, guid: 0eecf4d05ebc13e4692654912d448ba8, type: 2}
-  - {fileID: 11400000, guid: dcbed27dd5cdf034399527642f58a5cd, type: 2}
-  - {fileID: 11400000, guid: 3f986ffe65cfa8842966c12d685dab4e, type: 2}
-  - {fileID: 11400000, guid: cb8d1caebd924754da7f7cbf594ceae7, type: 2}
+  - {fileID: 11400000, guid: efc8d3ce02e4c38419ded85838f47fd5, type: 2}
+  - {fileID: 11400000, guid: b871f8bb0ee60d647943f39d3ed6c270, type: 2}
+  - {fileID: 11400000, guid: 30fcac322f034e6469a14ee091a9022a, type: 2}
+  - {fileID: 11400000, guid: 3101db73127ec5c4282bfc16afb72aee, type: 2}
+  - {fileID: 11400000, guid: 1cfbf3cd57937f94a95802584e70c53e, type: 2}
+  - {fileID: 11400000, guid: 17066bdc2b3fa5647a87d67838b51938, type: 2}
+  - {fileID: 11400000, guid: 3df32cc47299836499af9db67ebe9f4d, type: 2}
+  - {fileID: 11400000, guid: aa775ad413d739d438f6e43788c06ffb, type: 2}
+  - {fileID: 11400000, guid: dcc1714c678ea1c489e3a84bfde65299, type: 2}
+  - {fileID: 11400000, guid: 57df099942b52b049895ab9920c36180, type: 2}
+  - {fileID: 11400000, guid: fef2fdef0ab084c4eaa459e15470b90f, type: 2}
+  - {fileID: 11400000, guid: 6f66307010e57f34cbd324aeafc1439a, type: 2}
+  - {fileID: 11400000, guid: 24eca742372bea046ad591c694bc2714, type: 2}
+  - {fileID: 11400000, guid: 19d6e259a265e9b4ab06debe985c5fd6, type: 2}
   cardInHand: []
+  cardInStock: []
   cardSlotPrefab: {fileID: 1067308992562758, guid: edd7b9dec393e304da38de6c552bbb0f,
     type: 2}
   grid: {fileID: 0}
   handSize: 5
+  stockSize: 1
+  stockCount: 0
+  _buySFX: {fileID: 8300000, guid: 852a932f2eacbbc499b6fe429a474288, type: 3}

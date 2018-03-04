@@ -37,6 +37,8 @@ public class PartyManager : Photon.PunBehaviour {
     public Text phaseNameWin;
     public GameObject stealUI;
 
+    public AudioClip _turnSFX;
+
     private CameraController camController;
     private int PlayerID = 1;
     private int nbMaxPlayer;
@@ -332,6 +334,13 @@ public class PartyManager : Photon.PunBehaviour {
         waitingToStart = false;
         upgradePhase = false;
         Debug.Log("Turn Started");
+
+        // Plays an SFX to symbolize the start of the turn
+        AudioSource _as = this.gameObject.AddComponent<AudioSource>();
+        _as.clip = _turnSFX;
+        _as.Play();
+        Destroy(_as);
+
         if(PhotonNetwork.connected)
         {
             photonView.RPC("ChangeToBasicUI", PhotonTargets.AllViaServer);

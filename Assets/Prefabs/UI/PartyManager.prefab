@@ -2603,6 +2603,7 @@ MonoBehaviour:
   winnerText: {fileID: 114483948987310858}
   phaseNameWin: {fileID: 114807994023633158}
   stealUI: {fileID: 1709367686059962}
+  _turnSFX: {fileID: 8300000, guid: 65d598cf2ce217545bab0e7ca00b50aa, type: 3}
 --- !u!114 &114606829678096156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4339,7 +4340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0.000030517578, y: 2}
   m_SizeDelta: {x: 0, y: 95}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224412041637294790

@@ -55,6 +55,8 @@ public class CardManager : MonoBehaviour
     public int stockSize = 1;
     public int stockCount = 0;
 
+    public AudioClip _buySFX;
+
 
     /// <summary>
     /// Method to be called when you need to draw a hand of card

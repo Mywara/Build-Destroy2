@@ -40,6 +40,12 @@ public class CardToPrefab : Photon.PunBehaviour
                 MoneyText.text = "Money : " + MoneySystem.instance.money + "$";
                 IncomeText.text = IncomeText.text+ "\n -" + costblock + "$";
 
+                // Play an SFX to symbolize buying the card
+                AudioSource _as = this.gameObject.AddComponent<AudioSource>();
+                _as.clip = CardManager.instance._buySFX;
+                _as.Play();
+                Destroy(_as);
+
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
                 PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
