@@ -121,6 +121,7 @@ public class PartyManager : Photon.PunBehaviour {
             {
                 if (PhotonNetwork.room.PlayerCount == nbMaxPlayer)
                 {
+                    gameStarted = true;
                     photonView.RPC("StartingGame", PhotonTargets.AllViaServer);
                 }
             }
@@ -143,7 +144,7 @@ public class PartyManager : Photon.PunBehaviour {
 
             if (Time.time > startPhaseTime + waittingToStartTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                waitingToStart = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
@@ -172,7 +173,7 @@ public class PartyManager : Photon.PunBehaviour {
             //on change de phase
             if (Time.time > startPhaseTime + drawPhaseTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                drawPhase = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
@@ -198,7 +199,7 @@ public class PartyManager : Photon.PunBehaviour {
             
             if (Time.time > startPhaseTime + stealPhaseTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                stealPhase = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
@@ -224,7 +225,7 @@ public class PartyManager : Photon.PunBehaviour {
             
             if (Time.time > startPhaseTime + buildPhaseTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                buildPhase = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
@@ -250,7 +251,7 @@ public class PartyManager : Photon.PunBehaviour {
             
             if (Time.time > startPhaseTime + destructionPhaseTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                destructionPhase = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
@@ -276,7 +277,7 @@ public class PartyManager : Photon.PunBehaviour {
             
             if (Time.time > startPhaseTime + upgradePhaseTime || nbPlayerReady == nbMaxPlayer)
             {
-                
+                upgradePhase = false;
                 if (PhotonNetwork.connected)
                 {
                     photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
