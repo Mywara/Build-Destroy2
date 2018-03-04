@@ -9,6 +9,11 @@ public class Upgrades : MonoBehaviour {
     public Text costMoreCards;
     public Text costMoreStock;
     public Text costHiddenCard;
+    public Text plusIncome;
+    public PartyManager manageUI;
+    public int handsize;
+
+
     private int cost_inc_inc;
     private int cost_more_cards; 
     private int cost_more_stocks;    
@@ -18,8 +23,7 @@ public class Upgrades : MonoBehaviour {
     private int nbCards;
     private int nbCardsHidden = 1;
     private int nbCardsDrawn = 0;
-    public Text plusIncome;
-    public PartyManager manageUI;
+    
 
 
     public void Awake()
@@ -29,12 +33,7 @@ public class Upgrades : MonoBehaviour {
         plusIncome.text = "+ " + MoneySystem.instance.actualIncome;
         plusIncome.enabled = false;
         cost_draw_card = 1500;
-        nbCards = CardManager.instance.handSize;
-    }
-
-    public void usingcards()
-    {
-        nbCards--;
+        handsize = CardManager.instance.handSize;
     }
 
     public void showIncome()
@@ -53,7 +52,8 @@ public class Upgrades : MonoBehaviour {
         cost_hidden_card = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000 + nbCardsHidden * 2000;
         cost_more_cards = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.handSize * 1000;
         cost_more_stocks = (int)MoneySystem.instance.baseIncome * 2 / 3 + CardManager.instance.stockSize * 1000;
-        cost_draw_card = 1500 + (nbCardsDrawn * nbCardsDrawn * 1500);
+        cost_draw_card = 1500 + (nbCardsDrawn * 2 * 1500);
+        handsize = CardManager.instance.handSize;
     }
 
     public void updateCostText()
@@ -83,6 +83,7 @@ public class Upgrades : MonoBehaviour {
         if (MoneySystem.instance.BuyItem(cost_more_cards))
         {
             CardManager.instance.HandExtension();
+            handsize++;
             updateCost();
         }
     }
@@ -107,12 +108,13 @@ public class Upgrades : MonoBehaviour {
 
     public void drawACard()
     {
-        if (nbCards < CardManager.instance.handSize)
+        nbCards = CardManager.instance.countCards();
+        if (nbCards < handsize)
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
             {
-                manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
+                manageUI.UpdateMoney();
                 nbCards++;
                 updateCost();
             }

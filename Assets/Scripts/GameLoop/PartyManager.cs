@@ -319,7 +319,6 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Steal Phase");
         stealPhase = true;
-        drawButton.gameObject.SetActive(false);
     }
 
     [PunRPC]
@@ -352,6 +351,7 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseNameUpgrade("Upgrade Phase");
         upgradePhase = true;
+        drawButton.gameObject.SetActive(false);
     }
 
     private void UpdatePhaseName(string newText)

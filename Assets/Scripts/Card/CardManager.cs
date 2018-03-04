@@ -55,7 +55,6 @@ public class CardManager : MonoBehaviour
     public int handSize = 5;
     public int stockSize = 1;
     public int stockCount = 0;
-    public Upgrades useCards;
 
 
     /// <summary>
@@ -81,7 +80,6 @@ public class CardManager : MonoBehaviour
         {
             cardInStock.Add(obj);
             stockCount++;
-            useCards.usingcards();
         }
 
         // If we ever have too many card in the stock, remove the extras
@@ -175,5 +173,16 @@ public class CardManager : MonoBehaviour
     public bool CheckStock()
     {
         return stockCount < stockSize;
+    }
+
+    public int countCards()
+    {
+        cardInHand.Clear();
+        foreach (var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Cards"))
+        {
+            cardInHand.Add(obj);
+        }
+        Debug.Log("Comptage de carte");
+        return cardInHand.Count;
     }
 }

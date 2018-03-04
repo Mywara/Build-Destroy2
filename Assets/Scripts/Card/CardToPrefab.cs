@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
 public class CardToPrefab : Photon.PunBehaviour
-//public class CardToPrefab : MonoBehaviour
 {
 
     public GameObject detroyObject;
     public GameObject prefab;
-    public Upgrades drawCards;
 
     // Use this for initialization
     void Start()
@@ -20,7 +18,6 @@ public class CardToPrefab : Photon.PunBehaviour
         if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
         prefab = this.GetComponent<CardDisplay>().blockPrefab;
         Destroy(this.gameObject);
-        drawCards.usingcards();
         PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
     }
 }
