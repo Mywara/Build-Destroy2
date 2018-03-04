@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class MoneySystem : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class MoneySystem : MonoBehaviour {
     public int money;
     public int baseIncome = 15000;
     public int actualIncome;
+    public int blockCost;
 
 
     public static MoneySystem instance
@@ -98,7 +100,6 @@ public class MoneySystem : MonoBehaviour {
         instance.money += amount;
         SaveMoney();
     }
-
 
 }
 
