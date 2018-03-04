@@ -36,6 +36,7 @@ public class PartyManager : Photon.PunBehaviour {
     public Text winnerText;
     public Text phaseNameWin;
     public GameObject stealUI;
+    public Text additionalCardsCost;
 
     private CameraController camController;
     private int PlayerID = 1;
@@ -162,6 +163,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
 		if(drawPhase)
         {
+            additionalCardsCost.enabled = true;
             if(PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + drawPhaseTime - Time.time);
@@ -217,6 +219,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (buildPhase)
         {
+            additionalCardsCost.enabled = false;
             stealUI.SetActive(false);
             if (PhotonNetwork.connected)
             {
