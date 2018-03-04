@@ -18,7 +18,8 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        blockHandler = other.GetComponent<ObjectMouvement>();
+        GameObject otherGO = other.transform.root.gameObject;
+        blockHandler = otherGO.GetComponent<ObjectMouvement>();
 
         if(blockHandler)
         {
@@ -36,7 +37,8 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        blockHandler = other.GetComponent<ObjectMouvement>();
+        GameObject otherGO = other.transform.root.gameObject;
+        blockHandler = otherGO.GetComponent<ObjectMouvement>();
 
         if (blockHandler)
         {
