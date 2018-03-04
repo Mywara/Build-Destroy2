@@ -36,6 +36,7 @@ public class PartyManager : Photon.PunBehaviour {
     public Text winnerText;
     public Text phaseNameWin;
     public GameObject stealUI;
+    public Text notifUpgrade;
     public Text additionalCardsCost;
 
     private CameraController camController;
@@ -613,6 +614,7 @@ public class PartyManager : Photon.PunBehaviour {
         {
             basicUI.enabled = false;
             upgradeUI.enabled = true;
+            moneyUpgrade.text = "Budget " + MoneySystem.instance.money ;
             winUI.enabled = false;
             UpdateMoneyUpgrade();
             upgcost.updateCostText();
