@@ -359,8 +359,6 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 77.953
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 224265914667627698, guid: 0c9a33e84d84e9544bc388c5aef0fc0f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -386,7 +384,6 @@ Prefab:
       propertyPath: drawPhaseTime
       value: 30
       objectReference: {fileID: 0}
->>>>>>> Maxime-Branch
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9a33e84d84e9544bc388c5aef0fc0f, type: 2}
   m_IsPrefabParent: 0
