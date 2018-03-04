@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class RoomManager : Photon.PunBehaviour {
@@ -12,6 +10,7 @@ public class RoomManager : Photon.PunBehaviour {
     public Text numberText;
     public Text joinRoomText;
     public string LevelToLoad = "SceneTest";
+    private const int NBR_MAX_JOUEUR = 20;
 
     public void Awake()
     {
@@ -35,8 +34,20 @@ public class RoomManager : Photon.PunBehaviour {
         string name = createRoomText.text;
         RoomOptions ro = new RoomOptions();
 
-        int i;
+        string maxPlayers = numberText.text.ToString();                                                                                      
+        int i = 0;
         System.Int32.TryParse(numberText.text, out i);
+
+        Debug.Log("i = " + i);
+        if(i == 0 || ! char.IsDigit(maxPlayers, 0))
+        {
+            i = 1;
+        }
+        if(i > NBR_MAX_JOUEUR)
+        {
+            i = 20;
+        }
+
         ro.MaxPlayers = (byte)i;
         PhotonNetwork.JoinOrCreateRoom(name, ro, TypedLobby.Default);
     }
