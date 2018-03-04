@@ -51,7 +51,6 @@ public class PartyManager : Photon.PunBehaviour {
     private bool gameStarted = false;
     private bool waitingToStart = false;
     private string winnerName = "";
-    public GameObject stealUI;
 
     static public PartyManager instance;
 
@@ -86,7 +85,6 @@ public class PartyManager : Photon.PunBehaviour {
         timer.text = "";
         drawButton.gameObject.SetActive(false);
         ChangeToBasicUI();
-        stealUI.SetActive(true);
     }
 
     // Use this for initialization

@@ -37,14 +37,11 @@ public class CardToPrefab : Photon.PunBehaviour
         {
             if (MoneySystem.instance.BuyItem(costblock))
             {
-<<<<<<< HEAD
                 MoneyText.text = "Money : " + MoneySystem.instance.money + " $";
                 Debug.Log("income " + costblock);
                 Income.text = Income.text+  "\n - " + costblock ;
                
-=======
                 MoneyText.text = "" + MoneySystem.instance.money;
->>>>>>> parent of 332e58b... Merge branch 'master' of https://github.com/Mywara/Build-Destroy2
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
                 PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
@@ -66,7 +63,6 @@ public class CardToPrefab : Photon.PunBehaviour
         Destroy(this.gameObject);
         PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
         */
-<<<<<<< HEAD
 
 
     }
@@ -85,6 +81,4 @@ public class CardToPrefab : Photon.PunBehaviour
         Income.text = "aaa";
 
     }
-=======
->>>>>>> parent of 332e58b... Merge branch 'master' of https://github.com/Mywara/Build-Destroy2
     }
