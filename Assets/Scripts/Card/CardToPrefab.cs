@@ -41,6 +41,7 @@ public class CardToPrefab : Photon.PunBehaviour
                 Debug.Log("income " + costblock);
                 Income.text = Income.text+  "\n - " + costblock ;
                
+                MoneyText.text = "" + MoneySystem.instance.money;
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
                 PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
