@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectMouvement : Photon.PunBehaviour {
-
-    // Use this for initialization
-    private GameObject cube;
+    
+    GameObject cube;
     float z = 0;
-    bool dropEnabled = true;
-    int collision = 0;
+
+    // TEST
+    public bool dropEnabled = true;
 
     void Start () {
 		cube = this.gameObject;
@@ -62,6 +62,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         dropEnabled = true;
     }
 
+    /*
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "bloc")
@@ -78,4 +79,5 @@ public class ObjectMouvement : Photon.PunBehaviour {
         Debug.Log("col " + collision);
         }
     }
+*/
 }

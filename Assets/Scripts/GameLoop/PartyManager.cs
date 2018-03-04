@@ -97,7 +97,7 @@ public class PartyManager : Photon.PunBehaviour {
             camController.SetTarget(focusPoint);
                          
             // Test récupération de la zone de jeu du joueur
-            Vector3 offset = new Vector3(0f, 7f, 0f);
+            Vector3 offset = new Vector3(0f, 10f, 0f);
             PhotonNetwork.Instantiate("TestCube", playerZone.transform.position + offset, Quaternion.identity, 0);
         }
 
