@@ -8,9 +8,8 @@ public class RoomManager : Photon.PunBehaviour {
     static public RoomManager instance;
 
     public Text roomActvies;
-    public Text createRoomText;
+    public Text roomNameText;
     public Text numberText;
-    public Text joinRoomText;
     public string LevelToLoad = "SceneTest";
 
     public void Awake()
@@ -32,7 +31,7 @@ public class RoomManager : Photon.PunBehaviour {
 
     public void CreateRoom()
     {
-        string name = createRoomText.text;
+        string name = roomNameText.text;
         RoomOptions ro = new RoomOptions();
 
         int i = 0;
@@ -52,7 +51,7 @@ public class RoomManager : Photon.PunBehaviour {
 
     public void JoinRoom()
     {
-        string name = joinRoomText.text;
+        string name = roomNameText.text;
         RoomOptions ro = new RoomOptions();
         ro.MaxPlayers = 4;
         PhotonNetwork.JoinRoom(name);

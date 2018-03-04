@@ -58,6 +58,5 @@ MonoBehaviour:
   - UpdateTimerWin
   - UpgradePhase
   - WinPhase
-  - RbToNotKinematic
   - RbToNotKinematicAndDestory
   DisableAutoOpenWizard: 1
