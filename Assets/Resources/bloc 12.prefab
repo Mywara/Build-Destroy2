@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 114658674061067044}
   m_Layer: 0
   m_Name: bloc 12
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,3 +670,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropEnabled: 0
