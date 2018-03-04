@@ -109,7 +109,6 @@ public class PartyManager : Photon.PunBehaviour {
             return;
         }
         //Turn();
-        stealUI.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -191,7 +190,6 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (stealPhase)
         {
-            stealUI.SetActive(true);
             if (PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + stealPhaseTime - Time.time);
@@ -218,7 +216,6 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (buildPhase)
         {
-            stealUI.SetActive(false);
             if (PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + buildPhaseTime - Time.time);
@@ -355,7 +352,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DrawPhase()
     {
-        
+
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
@@ -366,6 +363,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void StealPhase()
     {
+
         drawPhase = false;
         upgcost.eraseIncome();
         startPhaseTime = Time.time;
@@ -376,6 +374,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void BuildPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(15).GetComponent<Text>().text = "";
         stealPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Build Phase");
@@ -385,6 +384,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DestructionPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(15).GetComponent<Text>().text = "";
         buildPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Destruction Phase");
