@@ -22,7 +22,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         {
             return;
         }
-        Debug.Log(dropEnabled);
+        //Debug.Log(dropEnabled);
         Vector3 pos = Input.mousePosition;
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
@@ -97,7 +97,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         GameObject otherGO = other.transform.root.gameObject;
         if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
         {
-            Debug.Log("trigger enter with " + otherGO.name);
+            //Debug.Log("trigger enter with " + otherGO.name);
             DisableDrop();
         }   
     }
@@ -107,7 +107,7 @@ public class ObjectMouvement : Photon.PunBehaviour {
         GameObject otherGO = other.transform.root.gameObject;
         if (otherGO.tag.Equals("bloc") || other.tag.Equals("bloc"))
         {
-            Debug.Log("trigger exit with " + otherGO.name);
+            //Debug.Log("trigger exit with " + otherGO.name);
             EnableDrop();
         } 
     }
