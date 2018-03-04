@@ -9,7 +9,7 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 
 	// Use this for early initialization
 	void Start () {
-        partyManager = (PartyManager)FindObjectOfType(typeof(PartyManager));
+        partyManager = PartyManager.instance;
         if (!partyManager)
         {
             Debug.Log("Party Manager could not be retrieved from PlayerZoneManager");
@@ -26,10 +26,10 @@ public class PlayerZoneManager : Photon.PunBehaviour {
             Transform playerZoneFocus = partyManager.playerZone.transform.GetChild(1);
             Transform consideredFocus = gameObject.transform.GetChild(1);
 
-            if((phaseType == PhaseType.Build && !playerZoneFocus.position.Equals(consideredFocus.position))
-               || (phaseType == PhaseType.Destruct && playerZoneFocus.position.Equals(consideredFocus.position)))
+            if((phaseType == PhaseType.Build && playerZoneFocus.position.Equals(consideredFocus.position))
+               || (phaseType == PhaseType.Destruct && !playerZoneFocus.position.Equals(consideredFocus.position)))
             {
-                blockHandler.DisableDrop();
+                blockHandler.EnableDrop();
             }
         }
     }
@@ -40,7 +40,7 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 
         if (blockHandler)
         {
-            blockHandler.EnableDrop();
+            blockHandler.DisableDrop();
             blockHandler = null;
         }
     }

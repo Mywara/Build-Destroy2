@@ -22,6 +22,10 @@ public class CardToPrefab : Photon.PunBehaviour
 
     public void DestroyAndCreate()
     {
+        if(!photonView.isMine)
+        {
+            return;
+        }
         PhaseType phaseType = partyManager.GetCurrentPhase();
 
         costblock = Convert.ToInt32(this.GetComponent<CardDisplay>().costText); 

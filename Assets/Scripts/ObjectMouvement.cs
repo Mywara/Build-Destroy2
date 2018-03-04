@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectMouvement : MonoBehaviour {
-
-    // Use this for initialization
-    private GameObject cube;
+public class ObjectMouvement : Photon.PunBehaviour {
+    
+    GameObject cube;
     float z = 0;
     bool dropEnabled = true;
     int collision = 0;
     private Transform[] cubes;
+
+    // TEST
+    public bool dropEnabled = true;
 
     void Start () {
 		cube = this.gameObject;
@@ -17,6 +19,10 @@ public class ObjectMouvement : MonoBehaviour {
 
     void Update()
     {
+        if(!photonView.isMine)
+        {
+            return;
+        }
         Vector3 pos = Input.mousePosition;
         pos.z = z - Camera.main.transform.position.z;
         cube.transform.position = Camera.main.ScreenToWorldPoint(pos);
@@ -32,7 +38,9 @@ public class ObjectMouvement : MonoBehaviour {
             z = z - (float)00000.1;
             cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, z);
         }
-        if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        //if (collision <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
             if (dropEnabled)
             {
@@ -74,6 +82,7 @@ public class ObjectMouvement : MonoBehaviour {
         dropEnabled = true;
     }
 
+    /*
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "bloc")
@@ -90,4 +99,5 @@ public class ObjectMouvement : MonoBehaviour {
         Debug.Log("col " + collision);
         }
     }
+*/
 }
