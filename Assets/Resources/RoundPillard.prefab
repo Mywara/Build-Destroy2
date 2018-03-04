@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4006263045946840}
   - component: {fileID: 33350670164883196}
-  - component: {fileID: 136226010037786670}
   - component: {fileID: 23822154968195930}
   - component: {fileID: 54002025993682026}
   - component: {fileID: 114744389989119604}
@@ -124,8 +123,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 10
-  instantiationId: 10
+  viewIdField: 11
+  instantiationId: 11
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114744389989119604
@@ -204,16 +203,3 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!136 &136226010037786670
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1059371325278682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

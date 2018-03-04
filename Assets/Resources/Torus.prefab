@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4076041087534256}
   - component: {fileID: 23234761349956704}
   - component: {fileID: 33287386339136602}
-  - component: {fileID: 64074465072345998}
   - component: {fileID: 114567713478919244}
   - component: {fileID: 54069568453436350}
   - component: {fileID: 114861280988492480}
@@ -102,20 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64074465072345998
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398404007318388}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!114 &114037778691624022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +199,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 12
-  instantiationId: 12
+  viewIdField: 8
+  instantiationId: 8
   currentMasterID: -1
   isRuntimeInstantiated: 0
