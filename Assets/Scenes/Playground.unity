@@ -459,6 +459,11 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114930080498746302, guid: 274194a54de3e4c5981ea5568bfc862c,
+        type: 2}
+      propertyPath: distanceBetweenPlayers
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274194a54de3e4c5981ea5568bfc862c, type: 2}
   m_IsPrefabParent: 0
