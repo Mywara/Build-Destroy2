@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 11
   m_EditorClassIdentifier: 
   name: Light Pink
-  cost: 
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: d3a3b0d06639cb449a329a38c46c01c4, type: 3}
   blockPrefab: {fileID: 1552506341000166, guid: 41d97d7edd9d54a4b9c32b69f5317d08,
     type: 2}

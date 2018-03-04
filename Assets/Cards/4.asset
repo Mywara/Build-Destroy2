@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   name: Purple
-  cost: 
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: 70bf30e8770d0664ca39b0ef028e94af, type: 3}
   blockPrefab: {fileID: 1885134409844402, guid: b50d9f60c0bd7b9449e58e2e7664ca34,
     type: 2}

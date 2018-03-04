@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 54469517719267310}
   - component: {fileID: 114248641564305892}
   - component: {fileID: 114266912401466030}
+  - component: {fileID: 114973882413553058}
   m_Layer: 0
   m_Name: bloc 11
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cf68bd777e0cef74b9f828e1e3b72e56, type: 2}
+  - {fileID: 2100000, guid: e0b20986d8af79649bc32e44348e0405, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,7 +219,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cf68bd777e0cef74b9f828e1e3b72e56, type: 2}
+  - {fileID: 2100000, guid: e0b20986d8af79649bc32e44348e0405, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,7 +253,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cf68bd777e0cef74b9f828e1e3b72e56, type: 2}
+  - {fileID: 2100000, guid: e0b20986d8af79649bc32e44348e0405, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -286,7 +287,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cf68bd777e0cef74b9f828e1e3b72e56, type: 2}
+  - {fileID: 2100000, guid: e0b20986d8af79649bc32e44348e0405, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -488,3 +489,14 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114973882413553058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1552506341000166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

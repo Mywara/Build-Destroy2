@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 54820486145644058}
   - component: {fileID: 114482879701842978}
   - component: {fileID: 114290084241369576}
+  - component: {fileID: 114419168650601708}
   m_Layer: 0
   m_Name: bloc 7
   m_TagString: Untagged
@@ -462,6 +463,17 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114419168650601708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889940933434634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114482879701842978
 MonoBehaviour:
   m_ObjectHideFlags: 1

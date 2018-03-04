@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   name: Orange
-  cost: 
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: 61a0739032a249941bbad614d13a73bf, type: 3}
   blockPrefab: {fileID: 1244810347294014, guid: 7d58a381ea295764bba03e2a3d4edabc,
     type: 2}

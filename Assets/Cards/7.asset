@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   name: Dark blue
-  cost: 
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: 21f7995fb24c3c041ad85bdb0f71f4d4, type: 3}
   blockPrefab: {fileID: 1889940933434634, guid: 795d6a35d8537e4449debda39162f9f3,
     type: 2}

@@ -9,6 +9,7 @@ public class ObjectMouvement : MonoBehaviour {
     float z = 0;
     bool dropEnabled = true;
     int collision = 0;
+    private Transform[] cubes;
 
     void Start () {
 		cube = this.gameObject;
@@ -35,7 +36,24 @@ public class ObjectMouvement : MonoBehaviour {
         {
             if (dropEnabled)
             {
-                cube.GetComponent<BoxCollider>().isTrigger = false;
+                //cube.GetComponent<BoxCollider>().isTrigger = false;
+
+                cubes = cube.transform.GetComponentsInChildren<Transform>();
+                Debug.Log("lenght" + cubes.Length);
+
+                for(int i = 1; i < cubes.Length;i++) {
+                
+                    if(cubes[i].name != "Cylinder")
+                    {
+                        cubes[i].GetComponent<BoxCollider>().isTrigger = false;
+                    }
+                    else
+                    {
+                        cubes[i].GetComponent<MeshCollider>().isTrigger = false;
+                    }
+                    
+                }
+
                 cube.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 Destroy(this);
             }

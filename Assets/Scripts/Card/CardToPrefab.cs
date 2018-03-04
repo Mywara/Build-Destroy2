@@ -5,7 +5,7 @@ using System;
 
 public class CardToPrefab : Photon.PunBehaviour
 {
-    public GameObject detroyObject;
+    private GameObject detroyObject;
     public GameObject prefab;
 
     private PartyManager partyManager;

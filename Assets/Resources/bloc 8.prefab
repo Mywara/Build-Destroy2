@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 54914948395479540}
   - component: {fileID: 114143944627186756}
   - component: {fileID: 114846054189272648}
+  - component: {fileID: 114540653803400914}
   m_Layer: 0
   m_Name: bloc 8
   m_TagString: Untagged
@@ -848,6 +849,17 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114540653803400914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818445595556642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114846054189272648
 MonoBehaviour:
   m_ObjectHideFlags: 1

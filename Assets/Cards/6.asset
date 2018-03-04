@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   name: Red
-  cost: 
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: 127276f90ef69154f8d0dba02a050dca, type: 3}
   blockPrefab: {fileID: 1146955735614414, guid: 0a0befc0fce022f46816aee90187d8cf,
     type: 2}

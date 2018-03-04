@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54534385763988048}
   - component: {fileID: 114170656850977258}
   - component: {fileID: 114904693509508920}
+  - component: {fileID: 114456966467908906}
   m_Layer: 0
   m_Name: bloc 3
   m_TagString: Untagged
@@ -508,6 +509,17 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114456966467908906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132960188051224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79660f638de5a541bb8b5600710489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114904693509508920
 MonoBehaviour:
   m_ObjectHideFlags: 1

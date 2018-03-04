@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   name: light green
-  cost: 10
-  image: {fileID: 0}
+  cost: 1000
+  image: {fileID: 21300000, guid: d9fdb05bbc59af44c943bd3815da5805, type: 3}
   blockPrefab: {fileID: 1124841024277748, guid: 7167b4120b960e04a8e3670d9fa5565b,
     type: 2}
