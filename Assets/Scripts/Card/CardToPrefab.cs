@@ -17,8 +17,12 @@ public class CardToPrefab : Photon.PunBehaviour
 
     public void DestroyAndCreate()
     {
+<<<<<<< HEAD
         // If we play the card from the stock, reduce the count
         if (this.gameObject.tag == "Stock_Cards") CardManager.instance.stockCount--;
+=======
+        prefab = this.GetComponent<CardDisplay>().blockPrefab;
+>>>>>>> master
         Destroy(this.gameObject);
         PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
     }
