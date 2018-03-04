@@ -2,6 +2,8 @@
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System;
+
 
 public class CardManager : MonoBehaviour
 {
@@ -51,6 +53,9 @@ public class CardManager : MonoBehaviour
     public List<GameObject> cardInStock; // List of the UI objects in the player's stock
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
+    public GridLayoutGroup stock; //The grilayoutGroup of stock
+    private int costblock;
+
     public int handSize = 5;
     public int stockSize = 1;
     public int stockCount = 0;
@@ -180,5 +185,21 @@ public class CardManager : MonoBehaviour
             cardInHand.Add(obj);
         }
         return cardInHand.Count;
+    }
+
+    public void fillStock(GameObject clickedCard)
+    {
+        //costblock = Convert.ToInt32(this.GetComponent<CardDisplay>().costText.text);
+        if (stockCount < stockSize)
+        {
+            //if (MoneySystem.instance.BuyItem(costblock))
+            //{
+                clickedCard.transform.SetParent(stock.transform, false);
+                clickedCard.transform.localScale = new Vector3(1, 1, 1);
+                clickedCard.transform.localPosition = Vector3.zero;
+                clickedCard.tag = "Stock_Cards";
+                stockCount++;
+            //}
+        }
     }
 }

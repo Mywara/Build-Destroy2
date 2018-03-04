@@ -9,6 +9,7 @@ public class changePlayer : MonoBehaviour
     private List<string> playerNameList;
     string currentPlayerName;
     int listIndex = 0;
+
     bool firstEnable = false;
 
     //TO DO add card list method
@@ -16,7 +17,9 @@ public class changePlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        playerNameList = ArenaManager.instance.playerNamesList;
+        currentPlayerName = playerNameList[listIndex];
+        tbPlayerName.text = currentPlayerName;
     }
 
     public void OnEnable()
@@ -44,6 +47,9 @@ public class changePlayer : MonoBehaviour
     {
         //change the diplayed name and hand for cards
         Debug.Log("previous work!!!");
+        listIndex++;
+        currentPlayerName = playerNameList[listIndex];
+        tbPlayerName.text = currentPlayerName;
         if (listIndex == 0)
         {
             listIndex = ArenaManager.instance.playerNamesList.Count - 1;
@@ -63,6 +69,9 @@ public class changePlayer : MonoBehaviour
     {
         //change to display next player hand & name
         Debug.Log("next work!!!");
+        listIndex--;
+        currentPlayerName = playerNameList[listIndex];
+        tbPlayerName.text = currentPlayerName;
         if (listIndex == ArenaManager.instance.playerNamesList.Count - 1)
         {
             listIndex = 0;
