@@ -52,6 +52,7 @@ public class CardManager : MonoBehaviour
     public GameObject cardSlotPrefab; // Prefab to the card slot, needed to add a card to an existing hand
     public GridLayoutGroup grid; // The gridLayoutGroup is the scalable hand of the player
     public GridLayoutGroup stock; //The grilayoutGroup of stock
+
     public int handSize = 5;
     public int stockSize = 1;
     public int stockCount = 0;
@@ -184,6 +185,7 @@ public class CardManager : MonoBehaviour
 
     public void fillStock()
     {
-
+        
+        
     }
 }
