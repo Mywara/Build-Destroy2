@@ -36,6 +36,7 @@ public class PartyManager : Photon.PunBehaviour {
     public Text winnerText;
     public Text phaseNameWin;
     public GameObject stealUI;
+    public Text additionalCardsCost;
 
     private CameraController camController;
     private int PlayerID = 1;
@@ -162,6 +163,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
 		if(drawPhase)
         {
+            additionalCardsCost.enabled = true;
             if(PhotonNetwork.connected)
             {
                 photonView.RPC("UpdateTimer", PhotonTargets.AllViaServer, startPhaseTime + drawPhaseTime - Time.time);
@@ -217,6 +219,7 @@ public class PartyManager : Photon.PunBehaviour {
         }
         else if (buildPhase)
         {
+            additionalCardsCost.enabled = false;
             stealUI.SetActive(false);
             if (PhotonNetwork.connected)
             {
@@ -354,7 +357,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DrawPhase()
     {
-        
+        //this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
@@ -365,6 +368,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void StealPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         drawPhase = false;
         upgcost.eraseIncome();
         startPhaseTime = Time.time;
@@ -375,6 +379,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void BuildPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         stealPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Build Phase");
@@ -413,6 +418,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void WinPhase()
     {
+        this.transform.GetChild(0).transform.GetChild(11).GetComponent<Text>().text = "";
         if (PhotonNetwork.connected)
         {
             photonView.RPC("ChangeToWinUI", PhotonTargets.AllViaServer);

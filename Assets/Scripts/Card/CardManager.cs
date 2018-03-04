@@ -55,6 +55,7 @@ public class CardManager : MonoBehaviour
     public int handSize = 5;
     public int stockSize = 1;
     public int stockCount = 0;
+    public GameObject cardJoin;
 
 
     /// <summary>

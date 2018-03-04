@@ -20,6 +20,8 @@ public class Upgrades : MonoBehaviour {
     public int handsize;
     public Text plusIncome;
     public PartyManager manageUI;
+    public Text debitText;
+    public Text Money;
 
 
     public void Awake()
@@ -65,6 +67,7 @@ public class Upgrades : MonoBehaviour {
 
         if (MoneySystem.instance.BuyItem(cost_inc_inc))
         {
+            Money.text = "Money : " + MoneySystem.instance.money + "$";
             MoneySystem.instance.actualIncome = (int)(MoneySystem.instance.baseIncome * 0.1 + MoneySystem.instance.actualIncome);
             updateCost();
             nbUpgrades++;
@@ -78,6 +81,8 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_more_cards))
         {
+            Money.text = "Money : " + MoneySystem.instance.money + "$";
+            debitText.text = "debitText -" + cost_more_cards + "$";
             CardManager.instance.HandExtension();
             handsize++;
             updateCost();
@@ -88,6 +93,8 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_more_stocks))
         {
+            Money.text = "Money : " + MoneySystem.instance.money + "$";
+            debitText.text = "debitText -" + cost_more_stocks + "$";
             CardManager.instance.stockSize++;
             updateCost();
         }
@@ -97,6 +104,8 @@ public class Upgrades : MonoBehaviour {
     {
         if (MoneySystem.instance.BuyItem(cost_hidden_card))
         {
+            Money.text = "Money : " + MoneySystem.instance.money + "$";
+            debitText.text = "debitText -" + cost_hidden_card + "$";
             updateCost();
         }
     }
@@ -108,6 +117,8 @@ public class Upgrades : MonoBehaviour {
         {
             if (MoneySystem.instance.BuyItem(cost_draw_card))
             {
+                Money.text = "Money : " + MoneySystem.instance.money + "$";
+                debitText.text = "debitText -" + cost_draw_card + "$";
                 manageUI.UpdateMoney();
                 CardManager.instance.AddCard();
                 nbCards++;

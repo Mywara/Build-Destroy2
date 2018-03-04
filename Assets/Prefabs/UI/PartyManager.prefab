@@ -3322,6 +3322,8 @@ MonoBehaviour:
   handsize: 0
   plusIncome: {fileID: 114764885829463390}
   manageUI: {fileID: 114564829639912442}
+  debitText: {fileID: 114849480439091238}
+  Money: {fileID: 114819661436589056}
 --- !u!114 &114834179732601208
 MonoBehaviour:
   m_ObjectHideFlags: 1
