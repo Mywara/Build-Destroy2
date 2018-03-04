@@ -52,6 +52,7 @@ public class ArenaManager : Photon.PunBehaviour {
 
     public void CreateArena() {
 
+
         if(nbPlayers == 1)
         {
             // instanciation de la zone de jeu
