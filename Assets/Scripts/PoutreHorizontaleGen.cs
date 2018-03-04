@@ -14,7 +14,7 @@ public class PoutreHorizontaleGen : MonoBehaviour
         RandomGen longueurScaler = new RandomGen(MIN_LONGUEUR, MAX_LONGUEUR);
         int longueur = longueurScaler.GetNbr();
         RandomGen hauteurScaler = new RandomGen(MIN_LARGEUR, MAX_LARGEUR);
-        int hauteur = hauteurScaler.GetNbr();
+        int hauteur = hauteur = hauteurScaler.GetNbr();
         RandomGen largueurScaler = new RandomGen(MIN_LARGEUR, MAX_LARGEUR);
         int largeur = largueurScaler.GetNbr();
 
