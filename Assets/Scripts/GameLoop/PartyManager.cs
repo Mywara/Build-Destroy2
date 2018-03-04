@@ -16,6 +16,7 @@ public class PartyManager : Photon.PunBehaviour {
     public float destructionPhaseTime = 5f;
     public float upgradePhaseTime = 5f;
     public float waittingToStartTime = 5f;
+    public float winPhaseTime = 10f;
     public Text phaseName;
     public Button readyForNewPhase;
     public Button readyForNewPhaseUpgrade;
@@ -23,16 +24,20 @@ public class PartyManager : Photon.PunBehaviour {
     public ArenaManager arenaManager;
     public Canvas basicUI;
     public Canvas upgradeUI;
+    public Canvas winUI;
     public Text phaseNameUpgrade;
     public Text timerUpgrade;
+    public Text timerWin;
     public Text money;
     public Text moneyUpgrade;
     public Upgrades upgcost;
     public Button drawButton;
-    public GameObject playerZone;
+    public Text winnerText;
+    public Text phaseNameWin;
 
+    private GameObject playerZone;
     private CameraController camController;
-    private int PlayerID = 1;
+    public int PlayerID = 1;
     private int nbMaxPlayer;
     private int nbPlayerReady;
     private float startPhaseTime;
@@ -41,14 +46,26 @@ public class PartyManager : Photon.PunBehaviour {
     private bool buildPhase = false;
     private bool destructionPhase = false;
     private bool upgradePhase = false;
+    private bool winPhase = false;
     private bool iAmReady = false;
     private bool gameStarted = false;
     private bool waitingToStart = false;
+    private string winnerName = "";
+
+    static public PartyManager instance;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Debug.Log("There already is an ArenaManager");
+            Destroy(this.gameObject);
+            return;
+        }
+        instance = this;
+
         //set le nombre de joueur max ie nb joueur necessaire rdy pour changer de phase
-        if(PhotonNetwork.connected)
+        if (PhotonNetwork.connected)
         {
             nbMaxPlayer = PhotonNetwork.room.MaxPlayers;
             PlayerID = PhotonNetwork.player.ID;
@@ -63,11 +80,11 @@ public class PartyManager : Photon.PunBehaviour {
         readyForNewPhaseUpgrade.GetComponent<Image>().color = Color.red;
         UpdateReadyButtonText();
         UpdateReadyButtonTextUpgrade();
-        upgradeUI.enabled = false;
         UpdateMoney();
         UpdatePhaseName("Waiting for other players...");
         timer.text = "";
         drawButton.gameObject.SetActive(false);
+        ChangeToBasicUI();
     }
 
     // Use this for initialization
@@ -272,13 +289,22 @@ public class PartyManager : Photon.PunBehaviour {
                 }
             }
         }
-    }
+        else if (winPhase)
+        {
+            if (PhotonNetwork.connected)
+            {
+                photonView.RPC("UpdateTimerWin", PhotonTargets.AllViaServer, startPhaseTime + winPhaseTime - Time.time);
+            }
+            else
+            {
+                UpdateTimerWin(startPhaseTime + winPhaseTime - Time.time);
+            }
 
-    public bool TargettingPlayerZone()
-    {
-        Transform focusPoint = playerZone.transform.GetChild(1);
-
-        return (focusPoint.position.Equals(camController.targetToRotateAround.position));
+            if (Time.time > startPhaseTime + winPhaseTime)
+            {
+                photonView.RPC("LeaveRoom", PhotonTargets.AllViaServer);
+            }
+        }
     }
 
     [PunRPC]
@@ -331,6 +357,7 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseName("Steal Phase");
         stealPhase = true;
+        drawButton.gameObject.SetActive(false);
     }
 
     [PunRPC]
@@ -363,7 +390,22 @@ public class PartyManager : Photon.PunBehaviour {
         startPhaseTime = Time.time;
         UpdatePhaseNameUpgrade("Upgrade Phase");
         upgradePhase = true;
-        drawButton.gameObject.SetActive(false);
+    }
+
+    [PunRPC]
+    private void WinPhase()
+    {
+        if (PhotonNetwork.connected)
+        {
+            photonView.RPC("ChangeToWinUI", PhotonTargets.AllViaServer);
+        }
+        else
+        {
+            ChangeToWinUI();
+        }
+        startPhaseTime = Time.time;
+        UpdatePhaseNameWin("Party is over");
+        winPhase = true;
     }
 
     private void UpdatePhaseName(string newText)
@@ -383,6 +425,18 @@ public class PartyManager : Photon.PunBehaviour {
         if (phaseName != null)
         {
             phaseNameUpgrade.text = newText;
+        }
+        else
+        {
+            Debug.Log("No UI.text linked to the partyManager");
+        }
+    }
+
+    private void UpdatePhaseNameWin(string newText)
+    {
+        if (phaseName != null)
+        {
+            phaseNameWin.text = newText;
         }
         else
         {
@@ -517,20 +571,31 @@ public class PartyManager : Photon.PunBehaviour {
 
     }
 
+    [PunRPC]
+    private void UpdateTimerWin(float countDown)
+    {
+        if (countDown <= 0)
+        {
+            countDown = 0;
+        }
+        timerWin.GetComponentInChildren<Text>().text = string.Format("{0:0}:{1:00}", Mathf.Floor(countDown / 60), countDown % 60);
+    }
+
     //on désactive l'UI de base, pour mettre l'UI d'upgrade
     [PunRPC]
     private void ChangeToUpgradeUI()
     {
-        if(basicUI != null && upgradeUI != null)
+        if(basicUI != null && upgradeUI != null && winUI != null)
         {
             basicUI.enabled = false;
             upgradeUI.enabled = true;
+            winUI.enabled = false;
             UpdateMoneyUpgrade();
             upgcost.updateCostText();
         }
         else
         {
-            Debug.Log("Missing basicUI or UpgradeUI on partyManager");
+            Debug.Log("Missing basicUI or UpgradeUI or WinUI on partyManager");
         }
 
     }
@@ -539,14 +604,31 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void ChangeToBasicUI()
     {
-        if (basicUI != null && upgradeUI != null)
+        if (basicUI != null && upgradeUI != null && winUI != null)
         {
             basicUI.enabled = true;
             upgradeUI.enabled = false;
+            winUI.enabled = false;
         }
         else
         {
-            Debug.Log("Missing basicUI or UpgradeUI on partyManager");
+            Debug.Log("Missing basicUI or UpgradeUI or WinUI on partyManager");
+        }
+    }
+
+    [PunRPC]
+    private void ChangeToWinUI()
+    {
+        if (winUI != null && upgradeUI != null && basicUI != null)
+        {
+            basicUI.enabled = false;
+            upgradeUI.enabled = false;
+            winUI.enabled = true;
+            UpdateWinnerText();
+        }
+        else
+        {
+            Debug.Log("Missing basicUI or UpgradeUI or WinUI on partyManager");
         }
     }
 
@@ -576,5 +658,30 @@ public class PartyManager : Photon.PunBehaviour {
     {
         MoneySystem.instance.BuyItem(cost);
         UpdateMoney();
+    }
+
+    [PunRPC]
+    private void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    private void UpdateWinnerText()
+    {
+        winnerText.text = "Winner is :\n" + winnerName;
+    }
+
+    [PunRPC]
+    public void GameIsOver(string winnerName)
+    {
+        this.winnerName = winnerName;
+        waitingToStart = false;
+        drawPhase = false;
+        stealPhase = false;
+        buildPhase = false;
+        destructionPhase = false;
+        upgradePhase = false;
+        photonView.RPC("ResetPhase", PhotonTargets.AllViaServer);
+        photonView.RPC("WinPhase", PhotonTargets.AllViaServer);
     }
 }

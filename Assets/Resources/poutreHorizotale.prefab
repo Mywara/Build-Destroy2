@@ -20,15 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4073054610495918}
   - component: {fileID: 33549434203779204}
-  - component: {fileID: 65831729362131896}
   - component: {fileID: 23517044616092422}
   - component: {fileID: 54223118537998958}
   - component: {fileID: 114875149817607570}
   - component: {fileID: 114085069973211538}
   - component: {fileID: 114440164581773442}
+  - component: {fileID: 65498781426795918}
   m_Layer: 0
   m_Name: poutreHorizotale
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,14 +102,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65831729362131896
+--- !u!65 &65498781426795918
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1424008434287136}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

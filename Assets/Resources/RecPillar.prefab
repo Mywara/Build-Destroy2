@@ -20,15 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4124082155429016}
   - component: {fileID: 33723892617968652}
-  - component: {fileID: 65775713945842020}
   - component: {fileID: 23610477970056680}
   - component: {fileID: 54494248538305460}
   - component: {fileID: 114311127224542870}
   - component: {fileID: 114927655694123004}
   - component: {fileID: 114921588228513468}
+  - component: {fileID: 65156243659168082}
   m_Layer: 0
   m_Name: RecPillar
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,14 +102,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65775713945842020
+--- !u!65 &65156243659168082
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631859275818476}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

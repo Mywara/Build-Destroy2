@@ -20,15 +20,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4006263045946840}
   - component: {fileID: 33350670164883196}
-  - component: {fileID: 136226010037786670}
   - component: {fileID: 23822154968195930}
   - component: {fileID: 54002025993682026}
   - component: {fileID: 114744389989119604}
   - component: {fileID: 114561402584067690}
   - component: {fileID: 114972623330671972}
+  - component: {fileID: 65863750344824178}
   m_Layer: 0
   m_Name: RoundPillard
-  m_TagString: Untagged
+  m_TagString: bloc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +102,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65863750344824178
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059371325278682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &114561402584067690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,16 +216,3 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!136 &136226010037786670
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1059371325278682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
