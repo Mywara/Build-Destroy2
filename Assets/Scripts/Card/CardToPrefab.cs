@@ -12,7 +12,6 @@ public class CardToPrefab : Photon.PunBehaviour
     private PartyManager partyManager;
     private int costblock;
     private Text MoneyText;
-    private Text Income;
 
     // Use this for initialization
     void Start () {
@@ -22,9 +21,8 @@ public class CardToPrefab : Photon.PunBehaviour
             Debug.Log("Party Manager could not be retrieved from Card To Prefab component");
         }
         MoneyText = partyManager.transform.GetChild(0).transform.GetChild(4).GetComponent<Text>();
-        Income = partyManager.transform.GetChild(0).transform.GetChild(15).GetComponent<Text>();
 
-    }
+	}
 
     public void DestroyAndCreate()
     {
@@ -37,10 +35,7 @@ public class CardToPrefab : Photon.PunBehaviour
         {
             if (MoneySystem.instance.BuyItem(costblock))
             {
-                MoneyText.text = "Money : " + MoneySystem.instance.money + " $";
-                Debug.Log("income " + costblock);
-                Income.text = Income.text+  "\n - " + costblock ;
-               
+                MoneyText.text = "" + MoneySystem.instance.money;
                 prefab = this.GetComponent<CardDisplay>().blockPrefab;
                 Destroy(this.gameObject);
                 PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity, 0);
@@ -62,22 +57,5 @@ public class CardToPrefab : Photon.PunBehaviour
         Destroy(this.gameObject);
         PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
         */
-
-
     }
-
-    IEnumerator Disapear(int x)
-    {
-        while (x >= 0)
-        {
-            Debug.Log("x" + x);
-            x = x - 1;
-         
-            yield return null;
-            Debug.Log("x2" + x);
-
-        }
-        Income.text = "aaa";
-
-    }
-    }
+}

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class changePlayer : MonoBehaviour
 {
 
-    /*public Text tbPlayerName;
+    public Text tbPlayerName;
     private List<string> playerNameList;
     string currentPlayerName;
-    int listIndex = 0;*/
+    int listIndex = 0;
 
 
     //TO DO add card list method
@@ -16,9 +16,9 @@ public class changePlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       /* playerNameList = ArenaManager.instance.playerNamesList;
+        playerNameList = ArenaManager.instance.playerNamesList;
         currentPlayerName = playerNameList[listIndex];
-        tbPlayerName.text = currentPlayerName;*/
+        tbPlayerName.text = currentPlayerName;
     }
 
     // Update is called once per frame
@@ -30,18 +30,18 @@ public class changePlayer : MonoBehaviour
     public void movePreviousPlayer()
     {
         //change the diplayed name and hand for cards
-       /* Debug.Log("previous work!!!");
+        Debug.Log("previous work!!!");
         listIndex++;
         currentPlayerName = playerNameList[listIndex];
-        tbPlayerName.text = currentPlayerName;*/
+        tbPlayerName.text = currentPlayerName;
     }
 
     public void moveNextPlayer()
     {
         //change to display next player hand & name
-       /* Debug.Log("next work!!!");
+        Debug.Log("next work!!!");
         listIndex--;
         currentPlayerName = playerNameList[listIndex];
-        tbPlayerName.text = currentPlayerName;*/
+        tbPlayerName.text = currentPlayerName;
     }
 }

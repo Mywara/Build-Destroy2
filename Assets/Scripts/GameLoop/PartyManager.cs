@@ -350,7 +350,7 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DrawPhase()
     {
-
+        
         startPhaseTime = Time.time;
         UpdatePhaseName("Draw Phase");
         drawPhase = true;
@@ -361,7 +361,6 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void StealPhase()
     {
-
         drawPhase = false;
         upgcost.eraseIncome();
         startPhaseTime = Time.time;
@@ -372,7 +371,6 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void BuildPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(15).GetComponent<Text>().text = "";
         stealPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Build Phase");
@@ -382,7 +380,6 @@ public class PartyManager : Photon.PunBehaviour {
     [PunRPC]
     private void DestructionPhase()
     {
-        this.transform.GetChild(0).transform.GetChild(15).GetComponent<Text>().text = "";
         buildPhase = false;
         startPhaseTime = Time.time;
         UpdatePhaseName("Destruction Phase");
