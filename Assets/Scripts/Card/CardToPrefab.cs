@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardToPrefab : MonoBehaviour {
+public class CardToPrefab : Photon.PunBehaviour
+{
 
     public GameObject detroyObject;
     public GameObject prefab;
@@ -15,7 +16,6 @@ public class CardToPrefab : MonoBehaviour {
     public void DestroyAndCreate()
     {
         Destroy(this.gameObject);
-        Quaternion q = new Quaternion();
-        Instantiate(prefab, Vector3.zero, q);
+        PhotonNetwork.Instantiate(prefab.name, Vector3.zero, Quaternion.identity,0);
     }
 }

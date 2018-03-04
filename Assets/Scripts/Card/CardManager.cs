@@ -59,7 +59,9 @@ public class CardManager : MonoBehaviour
     /// <param name="hand">Should be the handSize variable</param>
     public void DrawHand(int hand)
     {
-        hand = this.handSize;
+        // Reset the cardInHand list
+        cardInHand.Clear();
+
         // Finds all of the card slots in the player's UI
         foreach (var obj in GameObject.FindObjectsOfType<GameObject>().Where(o => o.tag == "Cards"))
         {
