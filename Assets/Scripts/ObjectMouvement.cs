@@ -6,7 +6,6 @@ public class ObjectMouvement : Photon.PunBehaviour {
     
     GameObject cube;
     float z = 0;
-    bool dropEnabled = true;
     int collision = 0;
     private Transform[] cubes;
 
