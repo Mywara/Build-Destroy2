@@ -9,11 +9,7 @@ public class PlayerZoneManager : Photon.PunBehaviour {
 	// Use this for early initialization
 	void Start () {
         partyManager = ((PartyManager)FindObjectOfType(typeof(PartyManager)));
-        if (partyManager)
-        {
-            Debug.Log("Party Manager was retrieved from PlayerZoneManager");
-        }
-        else
+        if (!partyManager)
         {
             Debug.Log("Party Manager could not be retrieved from PlayerZoneManager");
         }
